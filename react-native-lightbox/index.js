@@ -123,6 +123,7 @@ var Lightbox = React.createClass({
       this.setState({
         isOpen: true,
         isAnimating: true,
+        isClosing: false,
         width,
         height,
         target: {
@@ -151,6 +152,7 @@ var Lightbox = React.createClass({
     }
     this.setState({
       isAnimating: true,
+      isClosing: true
     });
     Animated.spring(
       this.state.openVal,
@@ -224,7 +226,7 @@ var Lightbox = React.createClass({
     }
 
     var activeProps = {};
-    if(this.state.isOpen) {
+    if(this.state.isOpen && !this.state.isClosing) {
       activeProps = this.props.activeProps;
     }
 
