@@ -76,7 +76,7 @@ export default class TaibBar extends React.Component {
     return (
       <TouchableOpacity key={page} onPress={() => this.props.goToPage(page)}>
         <View style={styles.tab}>
-          <Icon name={"ion|" + tab.icon} size={30} color={isTabActive ? '#1bce7c': '#cdcdcd'} style={styles.tabIcon}/>
+          <Icon name={'ion|' + tab.icon} size={30} color={isTabActive ? '#1bce7c': '#cdcdcd'} style={styles.tabIcon}/>
           <Text style={isTabActive ? styles.tabTextActive : styles.tabText}>{tab.name}</Text>
         </View>
       </TouchableOpacity>
