@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#1bce7c'
   },
   logo: {
+    marginTop: 10,
     width: 150,
     height: 30,
     resizeMode: 'contain'
