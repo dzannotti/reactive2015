@@ -13,6 +13,7 @@ export default React.createClass({
       <ScrollView
         scrollEventThrottle={16}
         onScroll={this.onParallaxScroll}
+        automaticallyAdjustContentInsets={false}
       >
         <Speaker scrollY={this.state.parallaxScrollY}/>
         <Speaker scrollY={this.state.parallaxScrollY}/>
