@@ -1,0 +1,15 @@
+{
+  "name": "reactive2015",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "react-native": "^0.11.4",
+    "react-native-accordion": "^0.2.2",
+    "react-native-browser-polyfill": "^0.1.1",
+    "react-native-icons": "^0.4.0",
+    "react-native-parallax": "^0.1.3"
+  }
+}
