@@ -1,9 +1,15 @@
-# running
+# Running the dev version
 ```
 npm install
 npm start
 open ios/reactive2015.xcodeproj -> run
 ```
+# To Lint
+```
+npm install
+npm run lint
+```
+
 # To debug
 
 # To source
