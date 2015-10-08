@@ -1,5 +1,6 @@
 import React from 'react-native';
 import Accordion from 'react-native-accordion';
+import { Icon } from 'react-native-icons';
 const { View, Text, StyleSheet, Image } = React;
 
 const styles = StyleSheet.create({
@@ -18,11 +19,12 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontFamily: 'Raleway',
     fontWeight: '400',
-    fontSize: 14
+    fontSize: 12,
+    width: 105
   },
   talk: {
     fontFamily: 'Raleway',
-    fontWeight: '300'
+    fontSize: 13
   },
   sized: {
     height: 70,
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
   leftColumn: {
     paddingLeft: 10,
     paddingTop: 15,
-    width: 100,
+    width: 105,
     flexDirection: 'column',
   },
   borderTopBig: {
@@ -58,10 +60,18 @@ const styles = StyleSheet.create({
   talkExcerpt : {
     fontFamily: 'Raleway',
     marginBottom: 20,
-    marginRight: 10
+    marginRight: 10,
+    fontSize: 13
   },
   rethinkingRest: {
     borderTopColor: '#9a58b6'
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  chevronContainer: {
+    width: 25
   }
 });
 
@@ -71,10 +81,13 @@ export default class Info extends React.Component {
       <View style={styles.headerContainer}>
         <View style={[styles.leftColumn, styles.sized, styles.borderTop, styles.borderTopBig]}>
           <Text style={styles.time}>8:00 - 9:00</Text>
-          <Text style={styles.speaker}>Paul Taylor</Text>
+          <Text style={styles.speaker}>R. Tirumalareddy</Text>
         </View>
         <View style={[styles.rightColumn, styles.sized, styles.borderTop, styles.borderTopBig, styles.rethinkingRest]}>
           <Text style={styles.talk}>FUNCTIONAL PROGRAMMING IN JAVASCRIPT. WHAT, WHY, AND HOW.</Text>
+        </View>
+        <View style={[styles.borderTopBig, styles.rethinkingRest, styles.sized, styles.center, styles.chevronContainer]}>
+          <Icon name="ion|chevron-down" size={20} color="#cdcdcd" style={{ marginRight: 10, marginLeft: 5, height: 20, width: 20 }}/>
         </View>
       </View>
     );
