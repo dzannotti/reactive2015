@@ -2,16 +2,15 @@ import React from 'react-native';
 import { Text, device } from '../utils';
 
 const {
-  Dimensions,
   StyleSheet,
   TouchableOpacity,
   View,
-  Animated,
+  Animated
 } = React;
 
-var modalWidth = device.width - 80;
+const modalWidth = device.width - 80;
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -91,7 +90,6 @@ export default class DefaultTabBar extends React.Component {
 
   render() {
     const numberOfTabs = tabOptions.length;
-    const tabWidth = modalWidth / numberOfTabs;
     const tabUnderlineStyle = {
       position: 'absolute',
       width: modalWidth / numberOfTabs,
@@ -112,7 +110,7 @@ export default class DefaultTabBar extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.tabs}>
-          {tabOptions.map((tab, i) => this.renderTabOption(tab, i))}
+          {tabOptions.map((tab, idx) => this.renderTabOption(tab, idx))}
         </View>
         <View style={styles.border}/>
         <Animated.View style={[tabUnderlineStyle, { left }]}>

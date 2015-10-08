@@ -18,7 +18,7 @@ export default class Info extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollableTabView topBar={true} renderTabBar={() => <TabBar />}>
+        <ScrollableTabView topBar renderTabBar={() => <TabBar />}>
           <Day nr={1}/>
           <Day nr={2}/>
           <Day nr={3}/>

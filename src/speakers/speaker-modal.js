@@ -9,7 +9,6 @@ const {
   View,
   StyleSheet,
   ScrollView,
-  Dimensions,
   Image
 } = React;
 
@@ -29,7 +28,6 @@ const styles = StyleSheet.create({
   speaker: {
     fontWeight: '400',
     position: 'absolute',
-    fontSize: 16,
     top: 10,
     left: 18,
     fontSize: 20,
@@ -41,7 +39,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   speakerCompany: {
-    fontSize: 14,
     position: 'absolute',
     bottom: 10,
     right: 10,
@@ -79,7 +76,7 @@ const styles = StyleSheet.create({
     width: modalWidth,
     flexDirection: 'column'
   }
-})
+});
 
 export default class SpeakerModal extends React.Component {
   renderOpen() {
@@ -97,18 +94,18 @@ export default class SpeakerModal extends React.Component {
           <Text style={styles.speakerCompany}>Cerebral</Text>
         </PImage>
         <View style={{ width: modalWidth }}>
-          <ScrollableTabView topBar={true} renderTabBar={() => <TabBar />}>
+          <ScrollableTabView topBar renderTabBar={() => <TabBar />}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
               <Text style={{ color: colors.black }}>Works for Mozilla on the Firefox Developer Tools, mostly trying to make debugging JavaScript better. He's spent the last 8 years studying programming languages like Lisp and Scheme, and trying to bring various ideas to JavaScript. He likes to write in-depth articles about interesting programming ideas. Most of his free time is now happily dedicated to his daughter.</Text>
               <View style={styles.links}>
                 <Link source={{ uri: 'http://twitter.com/ReactiveConf' }}>
-                  <Icon name='ion|social-twitter' size={30} color={colors.black} style={styles.linksIcon} />
+                  <Icon name="ion|social-twitter" size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
                 <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
-                  <Icon name='ion|social-facebook' size={30} color={colors.black} style={styles.linksIcon} />
+                  <Icon name="ion|social-facebook" size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
                 <Link source={{ uri: 'http://www.facebook.com/events/135898716752704/' }}>
-                  <Icon name='ion|ios-world-outline' size={30} color={colors.black} style={styles.linksIcon} />
+                  <Icon name="ion|ios-world-outline" size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
               </View>
             </ScrollView>

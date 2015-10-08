@@ -6,7 +6,7 @@ import { Text, Link, device } from '../utils';
 const {
   View,
   StyleSheet
-} =  React;
+} = React;
 
 const styles = StyleSheet.create({
   innerContainer: {
@@ -52,13 +52,13 @@ export default class StayInTouch extends React.Component {
           <Text style={styles.title}>STAY IN TOUCH WITH US!</Text>
           <View style={styles.links}>
             <Link source={{ uri: 'http://twitter.com/ReactiveConf' }}>
-              <Icon name='ion|social-twitter' size={30} color="#cdcdcd" style={styles.icon} />
+              <Icon name="ion|social-twitter" size={30} color="#cdcdcd" style={styles.icon} />
             </Link>
             <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
-              <Icon name='ion|social-facebook' size={30} color="#cdcdcd" style={styles.icon} />
+              <Icon name="ion|social-facebook" size={30} color="#cdcdcd" style={styles.icon} />
             </Link>
             <Link source={{ uri: 'http://www.facebook.com/events/135898716752704/' }}>
-              <Icon name='ion|calendar' size={30} color="#cdcdcd" style={styles.icon} />
+              <Icon name="ion|calendar" size={30} color="#cdcdcd" style={styles.icon} />
             </Link>
           </View>
         </View>

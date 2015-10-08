@@ -5,7 +5,7 @@ const {
   StyleSheet,
   TouchableOpacity,
   View,
-  Animated,
+  Animated
 } = React;
 
 const styles = StyleSheet.create({
@@ -86,7 +86,6 @@ export default class TabBar extends React.Component {
 
   render() {
     const numberOfTabs = tabOptions.length;
-    const tabWidth = device.width / numberOfTabs;
     const tabUnderlineStyle = {
       position: 'absolute',
       width: device.width / numberOfTabs,
@@ -107,7 +106,7 @@ export default class TabBar extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.tabs}>
-          {tabOptions.map((tab, i) => this.renderTabOption(tab, i))}
+          {tabOptions.map((tab, idx) => this.renderTabOption(tab, idx))}
         </View>
         <View style={styles.border}/>
         <Animated.View style={[tabUnderlineStyle, { left }]}>

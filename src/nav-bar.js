@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: 30,
     resizeMode: 'contain'
   }
-})
+});
 
 export default class NavBar extends React.Component {
   render() {

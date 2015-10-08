@@ -18,10 +18,9 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   type: {
-    marginTop: 20,
+    marginTop: 15,
     fontSize: 14,
-    marginBottom: 5,
-    marginTop: 15
+    marginBottom: 5
   },
   thanks: {
     textAlign: 'center',
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 10
   }
-})
+});
 
 export default class Sponsors extends React.Component {
   render() {

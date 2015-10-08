@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: 13
   }
-})
+});
 
 export default class Author extends React.Component {
   render() {
@@ -39,13 +39,13 @@ export default class Author extends React.Component {
         <Text style={styles.text}>Made with &lt;love/&gt; by Daniele Zannotti</Text>
         <View style={styles.links}>
           <Link source={{ uri: 'http://github.com/dzannotti' }}>
-            <Icon name='ion|social-github' size={25} color="#cdcdcd" style={styles.icon} />
+            <Icon name="ion|social-github" size={25} color={colors.grey} style={styles.icon} />
           </Link>
           <Link source={{ uri: 'http://twitter.com/dzannotti' }}>
-            <Icon name='ion|social-twitter' size={25} color="#cdcdcd" style={styles.icon} />
+            <Icon name="ion|social-twitter" size={25} color={colors.grey} style={styles.icon} />
           </Link>
           <Link source={{ uri: 'http://uk.linkedin.com/pub/daniele-zannotti/50/2a0/a73' }}>
-            <Icon name='ion|social-linkedin' size={25} color="#cdcdcd" style={styles.icon} />
+            <Icon name="ion|social-linkedin" size={25} color={colors.grey} style={styles.icon} />
           </Link>
         </View>
       </View>

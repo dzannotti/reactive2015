@@ -1,7 +1,7 @@
 import React from 'react-native';
 import ScrollableTabView from '../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
-import Speakers from './speakers'
+import Speakers from './speakers';
 import Navbar from './nav-bar';
 import Map from './map';
 import Info from './info';
@@ -10,7 +10,7 @@ import Schedule from './schedule';
 const {
   StyleSheet,
   View,
-  StatusBarIOS,
+  StatusBarIOS
 } = React;
 
 const styles = StyleSheet.create({

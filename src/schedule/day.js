@@ -1,5 +1,4 @@
 import React from 'react-native';
-import Day from './day';
 import Single from './single';
 
 const {

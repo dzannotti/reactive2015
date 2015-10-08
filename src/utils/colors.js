@@ -7,4 +7,4 @@ export default {
   darkBlue: '#212739',
   white: '#ffffff',
   black: '#323232'
-}
+};

@@ -5,7 +5,7 @@ import { Text, colors } from './utils';
 const {
   StyleSheet,
   View,
-  TouchableOpacity,
+  TouchableOpacity
 } = React;
 
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   tabIcon: {
     width: 30,
-    height: 30,
+    height: 30
   },
   tabText: {
     color: colors.grey
@@ -59,8 +59,8 @@ const tabOptions = [
   {
     name: 'Info',
     icon: 'ios-information-outline'
-  },
-]
+  }
+];
 
 export default class TabBar extends React.Component {
   static propTypes = {
@@ -70,14 +70,14 @@ export default class TabBar extends React.Component {
   };
 
   renderTabOption(tab, page) {
-    var isTabActive = this.props.activeTab === page;
+    const isTabActive = this.props.activeTab === page;
     return (
       <TouchableOpacity key={page} onPress={() => this.props.goToPage(page)}>
         <View style={styles.tab}>
           <Icon
             name={'ion|' + tab.icon}
             size={30}
-            color={isTabActive ? colors.green: colors.grey}
+            color={isTabActive ? colors.green : colors.grey}
             style={styles.tabIcon}
           />
           <Text
@@ -93,7 +93,7 @@ export default class TabBar extends React.Component {
   render() {
     return (
       <View style={styles.tabs}>
-        {tabOptions.map((tab, i) => this.renderTabOption(tab, i))}
+        {tabOptions.map((tab, idx) => this.renderTabOption(tab, idx))}
       </View>
     );
   }

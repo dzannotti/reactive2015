@@ -18,35 +18,35 @@ export default class Spakers extends React.Component {
         automaticallyAdjustContentInsets={false}
       >
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
         <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left={true}/>
+          <Speaker scrollY={this.state.parallaxScrollY} left/>
           <Speaker scrollY={this.state.parallaxScrollY}/>
         </View>
       </ScrollView>

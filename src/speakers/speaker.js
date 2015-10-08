@@ -1,6 +1,5 @@
 import React from 'react-native';
 import Lightbox from '../../react-native-lightbox';
-import { Image as PImage } from 'react-native-parallax';
 import SpeakerModal from './speaker-modal';
 
 const {

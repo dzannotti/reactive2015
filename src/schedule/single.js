@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   time: {
-    color: colors.green,
+    color: colors.green
   },
   speaker: {
     marginTop: 8,
@@ -30,16 +30,16 @@ const styles = StyleSheet.create({
     fontSize: 13
   },
   sized: {
-    height: 70,
+    height: 70
   },
   leftColumn: {
     paddingLeft: 10,
     paddingTop: 15,
     width: 105,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   borderTopBig: {
-    borderTopWidth: 4,
+    borderTopWidth: 4
   },
   borderTop: {
     borderBottomWidth: 0,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     height: 45,
     borderRadius: 23
   },
-  talkExcerpt : {
+  talkExcerpt: {
     marginBottom: 20,
     marginRight: 10,
     fontSize: 13

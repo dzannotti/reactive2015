@@ -9,4 +9,4 @@ export default {
   colors,
   Text,
   Link
-}
+};

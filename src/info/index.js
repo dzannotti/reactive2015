@@ -1,8 +1,7 @@
 import React from 'react-native';
-import { Icon } from 'react-native-icons';
 import Parallax from 'react-native-parallax';
 import reactMixin from 'react-mixin';
-import { Link, colors } from '../utils';
+import { colors } from '../utils';
 import Author from './author';
 import Sponsors from './sponsors';
 import StayInTouch from './stay-in-touch';
@@ -10,14 +9,9 @@ import Rethinking from './rethinking';
 
 const {
   View,
-  Text,
   StyleSheet,
-  ScrollView,
-  Dimensions,
-  Image
+  ScrollView
 } = React;
-
-const deviceWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
