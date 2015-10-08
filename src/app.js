@@ -36,9 +36,9 @@ export default class App extends React.Component {
         <Navbar/>
         <ScrollableTabView renderTabBar={() => <TabBar />}>
           <Schedule/>
-          <Speakers />
-          <Map />
-          <Info />
+          <Speakers/>
+          <Map/>
+          <Info/>
         </ScrollableTabView>
       </View>
     );

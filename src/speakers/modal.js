@@ -3,7 +3,7 @@ import { Image as PImage } from 'react-native-parallax';
 import ScrollableTabView from '../../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
 import { Icon } from 'react-native-icons';
-import Link from '../link';
+import { Link } from '../utils';
 
 const {
   View,
