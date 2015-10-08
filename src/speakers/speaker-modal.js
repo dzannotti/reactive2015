@@ -1,62 +1,52 @@
 import React from 'react-native';
 import { Image as PImage } from 'react-native-parallax';
+import { Icon } from 'react-native-icons';
 import ScrollableTabView from '../../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
-import { Icon } from 'react-native-icons';
-import { Link } from '../utils';
+import { Link, device, Text, colors } from '../utils';
 
 const {
   View,
-  Text,
   StyleSheet,
   ScrollView,
   Dimensions,
   Image
 } = React;
 
-const deviceWidth = Dimensions.get('window').width;
+const modalWidth = device.width - 80;
 
 const styles = StyleSheet.create({
   listItem: {
-    width: deviceWidth/2,
+    width: device.width / 2,
     height: 100,
-    borderWidth: 0,
-    borderColor: 'transparent',
-    borderBottomWidth: 1,
-    borderBottomColor: '#1bce7c',
-  },
-  leftItem: {
-    borderLeftWidth: 1,
-    borderLeftColor: '#1bce7c'
+    borderWidth: 0
   },
   listItemOpen: {
     margin: 40,
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.white,
     overflow: 'hidden'
   },
   speaker: {
-    fontFamily: 'Raleway',
     fontWeight: '400',
     position: 'absolute',
     fontSize: 16,
     top: 10,
     left: 18,
     fontSize: 20,
-    color: '#ffffff'
+    color: colors.white
   },
   role: {
-    fontFamily: 'Raleway',
+    color: colors.black,
     fontSize: 14,
     textAlign: 'center'
   },
   speakerCompany: {
-    fontFamily: 'Raleway',
     fontSize: 14,
     position: 'absolute',
     bottom: 10,
     right: 10,
     fontSize: 16,
-    color: '#ffffff'
+    color: colors.white
   },
   rowCentered: {
     flexDirection: 'row',
@@ -79,9 +69,15 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   companyLogo: {
-    width: deviceWidth - 83,
+    width: device.width,
     height: 25,
     resizeMode: 'contain'
+  },
+  scrollContainer: {
+    padding: 20,
+    flex: 1,
+    width: modalWidth,
+    flexDirection: 'column'
   }
 })
 
@@ -90,33 +86,33 @@ export default class SpeakerModal extends React.Component {
     return (
       <View style={styles.listItemOpen}>
         <PImage
-          style={{ width: deviceWidth -80, height: 100 }}
+          style={{ width: modalWidth, height: 100 }}
           scrollY={this.props.scrollY}
           overlayStyle={{ backgroundColor: 'rgba(0,0,0,0.3)'}}
           resizeMode="cover"
           parallaxFactor={0.3}
           source={{ uri: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg' }}
         >
-          <Text style={styles.speaker}>Sean Grove</Text>
-          <Text style={styles.speakerCompany}>Glint</Text>
+          <Text style={styles.speaker}>François De Campredon</Text>
+          <Text style={styles.speakerCompany}>Cerebral</Text>
         </PImage>
-        <View style={{ width: deviceWidth -83 }}>
+        <View style={{ width: modalWidth }}>
           <ScrollableTabView topBar={true} renderTabBar={() => <TabBar />}>
-            <ScrollView contentContainerStyle={{ padding: 20, flex: 1, width: deviceWidth -83, flexDirection: 'column' }}>
-              <Text style={{ color: '#323232'}}>Works for Mozilla on the Firefox Developer Tools, mostly trying to make debugging JavaScript better. He's spent the last 8 years studying programming languages like Lisp and Scheme, and trying to bring various ideas to JavaScript. He likes to write in-depth articles about interesting programming ideas. Most of his free time is now happily dedicated to his daughter.</Text>
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
+              <Text style={{ color: colors.black }}>Works for Mozilla on the Firefox Developer Tools, mostly trying to make debugging JavaScript better. He's spent the last 8 years studying programming languages like Lisp and Scheme, and trying to bring various ideas to JavaScript. He likes to write in-depth articles about interesting programming ideas. Most of his free time is now happily dedicated to his daughter.</Text>
               <View style={styles.links}>
                 <Link source={{ uri: 'http://twitter.com/ReactiveConf' }}>
-                  <Icon name='ion|social-twitter' size={30} color="#323232" style={styles.linksIcon} />
+                  <Icon name='ion|social-twitter' size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
                 <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
-                  <Icon name='ion|social-facebook' size={30} color="#323232" style={styles.linksIcon} />
+                  <Icon name='ion|social-facebook' size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
                 <Link source={{ uri: 'http://www.facebook.com/events/135898716752704/' }}>
-                  <Icon name='ion|ios-world-outline' size={30} color="#323232" style={styles.linksIcon} />
+                  <Icon name='ion|ios-world-outline' size={30} color={colors.black} style={styles.linksIcon} />
                 </Link>
               </View>
             </ScrollView>
-            <ScrollView contentContainerStyle={{ padding: 20, flex: 1, width: deviceWidth -83, flexDirection: 'column' }}>
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
               <View style={styles.links}>
                 <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
                   <Image style={styles.companyLogo} source={{ uri: 'https://reactive2015.com/assets/img/companies/mozilla_logo.png' }} />
@@ -141,12 +137,12 @@ export default class SpeakerModal extends React.Component {
         <PImage
           style={{ height: 100 }}
           scrollY={this.props.scrollY}
-          overlayStyle={{ backgroundColor: 'rgba(0,0,0,0.3)'}}
+          overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
           source={{ uri: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg' }}
         >
-          <Text style={styles.speaker}>Sean Grove</Text>
-          <Text style={styles.speakerCompany}>Glint</Text>
+          <Text style={styles.speaker}>François De Campredon</Text>
+          <Text style={styles.speakerCompany}>Cerebral</Text>
         </PImage>
       </View>
     );

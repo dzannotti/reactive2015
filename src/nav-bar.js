@@ -1,4 +1,6 @@
 import React from 'react-native';
+import { colors } from './utils';
+
 const {
   StyleSheet,
   View,
@@ -10,12 +12,12 @@ const styles = StyleSheet.create({
     padding: 0,
     height: 64,
     margin: 0,
-    backgroundColor: '#0f1726',
+    backgroundColor: colors.darkBlue,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     borderBottomWidth: 2,
-    borderBottomColor: '#1bce7c'
+    borderBottomColor: colors.green
   },
   logo: {
     marginTop: 10,

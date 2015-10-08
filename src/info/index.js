@@ -2,7 +2,7 @@ import React from 'react-native';
 import { Icon } from 'react-native-icons';
 import Parallax from 'react-native-parallax';
 import reactMixin from 'react-mixin';
-import { Link } from '../utils';
+import { Link, colors } from '../utils';
 import Author from './author';
 import Sponsors from './sponsors';
 import StayInTouch from './stay-in-touch';
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     height: 2,
     marginTop: 20,
     marginBottom: 20,
-    backgroundColor: '#2ecc71'
+    backgroundColor: colors.green
   }
 });
 

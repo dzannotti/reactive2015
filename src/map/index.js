@@ -12,25 +12,18 @@ const styles = StyleSheet.create({
 });
 
 export default class Map extends React.Component {
-  constructor(props) {
-    super(props);
+  render() {
     const venue =  {
       latitude: 48.152,
       longitude: 17.116
     };
-    this.state = {
-      region: venue,
-      annotations: [ venue ]
-    };
-  }
-  render() {
     return (
       <MapView
         pitchEnabled={true}
         showsUserLocation={true}
         style={styles.container}
-        region={this.state.mapRegion || undefined}
-        annotations={this.state.annotations || undefined}/>
+        region={venue}
+        annotations={[venue]}/>
     );
   }
 }

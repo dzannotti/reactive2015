@@ -1,14 +1,16 @@
 import React from 'react-native';
-import Speaker from './single';
+import Parallax from 'react-native-parallax';
+import reactMixin from 'react-mixin';
+import Speaker from './speaker';
 
-const { ScrollView, View, Text } = React;
+const {
+  ScrollView,
+  View
+} = React;
 
-var Parallax = require('react-native-parallax');
-
-export default React.createClass({
-  mixins: [Parallax.Mixin],
-
-  render: function() {
+@reactMixin.decorate(Parallax.Mixin)
+export default class Spakers extends React.Component {
+  render() {
     return (
       <ScrollView
         scrollEventThrottle={16}
@@ -49,5 +51,5 @@ export default React.createClass({
         </View>
       </ScrollView>
     );
-  },
-});
+  }
+}

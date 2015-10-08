@@ -23,7 +23,7 @@ var {
 
 var WINDOW_HEIGHT = Dimensions.get('window').height;
 var WINDOW_WIDTH = Dimensions.get('window').width;
-var SPRING_CONFIG = { tension: 30, friction: 7 };
+var SPRING_CONFIG = { tension: 20, friction: 6 };
 var DRAG_DISMISS_THRESHOLD = 150;
 
 var Lightbox = React.createClass({

@@ -2,7 +2,10 @@ import React from 'react-native';
 import Day from './day';
 import Single from './single';
 
-const { ScrollView, Text, StyleSheet } = React;
+const {
+  ScrollView,
+  StyleSheet
+} = React;
 
 const styles = StyleSheet.create({
   container: {
@@ -15,9 +18,10 @@ export default class Info extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Single/>
-        <Single/>
-        <Single/>
-        <Single/>
+        <Single type="rethinking"/>
+        <Single type="dataflow"/>
+        <Single type="react"/>
+        <Single type="general"/>
       </ScrollView>
     );
   }

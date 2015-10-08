@@ -1,14 +1,15 @@
-var React = require('react-native');
-var {
+import React from 'react-native';
+import { Text, device } from '../utils';
+
+const {
   Dimensions,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
   Animated,
 } = React;
 
-var deviceWidth = Dimensions.get('window').width;
+var modalWidth = device.width - 80;
 
 var styles = StyleSheet.create({
   container: {
@@ -22,15 +23,14 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-
   tabs: {
-    width: deviceWidth - 80,
+    width: modalWidth,
     height: 35,
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
   border: {
-    width: deviceWidth - 80,
+    width: modalWidth,
     height: 1,
     marginBottom: 7,
     backgroundColor: '#323232'
@@ -64,31 +64,37 @@ const tabOptions = [
   }
 ];
 
-var DefaultTabBar = React.createClass({
-  propTypes: {
+export default class DefaultTabBar extends React.Component {
+  static propTypes = {
     goToPage: React.PropTypes.func,
     activeTab: React.PropTypes.number,
     tabs: React.PropTypes.array
-  },
+  }
 
-  renderTabOption(name, page) {
-    var isTabActive = this.props.activeTab === page;
-
+  renderTabOption(tab, page) {
+    const isTabActive = this.props.activeTab === page;
     return (
-      <TouchableOpacity style={[styles.tab]} key={name.name} onPress={() => this.props.goToPage(page)}>
+      <TouchableOpacity style={styles.tab} key={tab.name} onPress={() => this.props.goToPage(page)}>
         <View>
-          <Text style={{color: isTabActive ? '#1bce7c' : '#323232', fontWeight: isTabActive ? 'bold' : 'normal'}}>{name.name}</Text>
+          <Text
+            style={{
+              color: isTabActive ? '#1bce7c' : '#323232',
+              fontWeight: isTabActive ? 'bold' : 'normal'
+            }}
+          >
+            {tab.name}
+          </Text>
         </View>
       </TouchableOpacity>
     );
-  },
+  }
 
   render() {
-    var numberOfTabs = this.props.tabs.length;
-    var tabWidth = (deviceWidth  - 80) / numberOfTabs;
-    var tabUnderlineStyle = {
+    const numberOfTabs = tabOptions.length;
+    const tabWidth = modalWidth / numberOfTabs;
+    const tabUnderlineStyle = {
       position: 'absolute',
-      width: (deviceWidth  - 80)/ numberOfTabs,
+      width: modalWidth / numberOfTabs,
       height: 10,
       borderColor: '#1bce7c',
       borderTopWidth: 2,
@@ -98,9 +104,9 @@ var DefaultTabBar = React.createClass({
       justifyContent: 'center'
     };
 
-    var left = this.props.scrollValue.interpolate({
+    const left = this.props.scrollValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, (deviceWidth  - 80) / numberOfTabs]
+      outputRange: [0, modalWidth / numberOfTabs]
     });
 
     return (
@@ -109,12 +115,10 @@ var DefaultTabBar = React.createClass({
           {tabOptions.map((tab, i) => this.renderTabOption(tab, i))}
         </View>
         <View style={styles.border}/>
-        <Animated.View style={[tabUnderlineStyle, {left}]}>
-          <View style={[styles.triangle, styles.triangleDown]} />
+        <Animated.View style={[tabUnderlineStyle, { left }]}>
+          <View style={styles.triangle} />
         </Animated.View>
       </View>
     );
-  },
-});
-
-module.exports = DefaultTabBar;
+  }
+}

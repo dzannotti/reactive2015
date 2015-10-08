@@ -3,7 +3,10 @@ import ScrollableTabView from '../../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
 import Day from './day';
 
-const { View, Text, StyleSheet } = React;
+const {
+  View,
+  StyleSheet
+} = React;
 
 const styles = StyleSheet.create({
   container: {

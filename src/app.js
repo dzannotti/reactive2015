@@ -9,14 +9,9 @@ import Schedule from './schedule';
 
 const {
   StyleSheet,
-  Text,
   View,
-  ScrollView,
-  Dimensions,
   StatusBarIOS,
 } = React;
-
-const deviceWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {

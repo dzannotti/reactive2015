@@ -1,16 +1,14 @@
-var React = require('react-native');
-var {
-  Dimensions,
+import React from 'react-native';
+import { Text, device, colors } from '../utils';
+
+const {
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
   Animated,
 } = React;
 
-var deviceWidth = Dimensions.get('window').width;
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -24,16 +22,16 @@ var styles = StyleSheet.create({
   },
 
   tabs: {
-    width: deviceWidth,
+    width: device.width,
     height: 35,
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
   border: {
-    width: deviceWidth,
+    width: device.width,
     height: 1,
     marginBottom: 7,
-    backgroundColor: 'black'
+    backgroundColor: colors.black
   },
   triangle: {
     width: 0,
@@ -46,7 +44,7 @@ var styles = StyleSheet.create({
     borderBottomWidth: 10,
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
-    borderBottomColor: '#1bce7c',
+    borderBottomColor: colors.green,
     transform: [
       {
         rotate: '180deg'
@@ -67,33 +65,33 @@ const tabOptions = [
   }
 ];
 
-var DefaultTabBar = React.createClass({
-  propTypes: {
+export default class TabBar extends React.Component {
+  static propTypes = {
     goToPage: React.PropTypes.func,
     activeTab: React.PropTypes.number,
     tabs: React.PropTypes.array
-  },
+  };
 
   renderTabOption(name, page) {
-    var isTabActive = this.props.activeTab === page;
+    const isTabActive = this.props.activeTab === page;
 
     return (
       <TouchableOpacity style={[styles.tab]} key={name.name} onPress={() => this.props.goToPage(page)}>
         <View>
-          <Text style={{color: isTabActive ? '#1bce7c' : 'black', fontWeight: isTabActive ? 'bold' : 'normal'}}>{name.name}</Text>
+          <Text style={{color: isTabActive ? colors.green : colors.black, fontWeight: isTabActive ? 'bold' : 'normal'}}>{name.name}</Text>
         </View>
       </TouchableOpacity>
     );
-  },
+  }
 
   render() {
-    var numberOfTabs = this.props.tabs.length;
-    var tabWidth = deviceWidth / numberOfTabs;
-    var tabUnderlineStyle = {
+    const numberOfTabs = tabOptions.length;
+    const tabWidth = device.width / numberOfTabs;
+    const tabUnderlineStyle = {
       position: 'absolute',
-      width: deviceWidth / numberOfTabs,
+      width: device.width / numberOfTabs,
       height: 10,
-      borderColor: '#1bce7c',
+      borderColor: colors.green,
       borderTopWidth: 2,
       marginBottom: 15,
       bottom: 0,
@@ -101,9 +99,9 @@ var DefaultTabBar = React.createClass({
       justifyContent: 'center'
     };
 
-    var left = this.props.scrollValue.interpolate({
+    const left = this.props.scrollValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, deviceWidth / numberOfTabs]
+      outputRange: [0, device.width / numberOfTabs]
     });
 
     return (
@@ -112,12 +110,10 @@ var DefaultTabBar = React.createClass({
           {tabOptions.map((tab, i) => this.renderTabOption(tab, i))}
         </View>
         <View style={styles.border}/>
-        <Animated.View style={[tabUnderlineStyle, {left}]}>
-          <View style={[styles.triangle, styles.triangleDown]} />
+        <Animated.View style={[tabUnderlineStyle, { left }]}>
+          <View style={styles.triangle} />
         </Animated.View>
       </View>
     );
-  },
-});
-
-module.exports = DefaultTabBar;
+  }
+}

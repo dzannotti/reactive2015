@@ -1,9 +1,9 @@
 import React from 'react-native';
 import { Icon } from 'react-native-icons';
+import { Text, colors } from './utils';
 
 const {
   StyleSheet,
-  Text,
   View,
   TouchableOpacity,
 } = React;
@@ -28,20 +28,18 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderTopColor: '#1bce7c',
-    backgroundColor: '#0f1726'
+    borderTopColor: colors.green,
+    backgroundColor: colors.darkBlue
   },
   tabIcon: {
     width: 30,
     height: 30,
   },
   tabText: {
-    fontFamily: 'Raleway',
-    color: '#cdcdcd'
+    color: colors.grey
   },
   tabTextActive: {
-    fontFamily: 'Raleway',
-    color: '#1bce7c'
+    color: colors.green
   }
 });
 
@@ -76,8 +74,17 @@ export default class TabBar extends React.Component {
     return (
       <TouchableOpacity key={page} onPress={() => this.props.goToPage(page)}>
         <View style={styles.tab}>
-          <Icon name={'ion|' + tab.icon} size={30} color={isTabActive ? '#1bce7c': '#cdcdcd'} style={styles.tabIcon}/>
-          <Text style={isTabActive ? styles.tabTextActive : styles.tabText}>{tab.name}</Text>
+          <Icon
+            name={'ion|' + tab.icon}
+            size={30}
+            color={isTabActive ? colors.green: colors.grey}
+            style={styles.tabIcon}
+          />
+          <Text
+            style={isTabActive ? styles.tabTextActive : styles.tabText}
+          >
+            {tab.name}
+          </Text>
         </View>
       </TouchableOpacity>
     );

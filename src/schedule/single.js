@@ -1,7 +1,13 @@
 import React from 'react-native';
 import Accordion from 'react-native-accordion';
 import { Icon } from 'react-native-icons';
-const { View, Text, StyleSheet, Image } = React;
+import { Text, colors } from '../utils';
+
+const {
+  View,
+  StyleSheet,
+  Image
+} = React;
 
 const styles = StyleSheet.create({
   container: {
@@ -12,18 +18,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   time: {
-    color: '#1bce7c',
-    fontFamily: 'Raleway'
+    color: colors.green,
   },
   speaker: {
     marginTop: 8,
-    fontFamily: 'Raleway',
     fontWeight: '400',
     fontSize: 12,
     width: 105
   },
   talk: {
-    fontFamily: 'Raleway',
     fontSize: 13
   },
   sized: {
@@ -40,10 +43,10 @@ const styles = StyleSheet.create({
   },
   borderTop: {
     borderBottomWidth: 0,
-    borderTopWidth: 2,
+    borderTopWidth: 1,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderTopColor: '#cdcdcd'
+    borderTopColor: colors.grey
   },
   rightColumn: {
     paddingLeft: 10,
@@ -58,13 +61,9 @@ const styles = StyleSheet.create({
     borderRadius: 23
   },
   talkExcerpt : {
-    fontFamily: 'Raleway',
     marginBottom: 20,
     marginRight: 10,
     fontSize: 13
-  },
-  rethinkingRest: {
-    borderTopColor: '#9a58b6'
   },
   center: {
     justifyContent: 'center',
@@ -72,22 +71,45 @@ const styles = StyleSheet.create({
   },
   chevronContainer: {
     width: 25
+  },
+  chevron: {
+    marginRight: 10,
+    marginLeft: 5,
+    height: 20,
+    width: 20
+  },
+  rethinking: {
+    borderTopWidth: 4,
+    borderTopColor: colors.purple
+  },
+  dataflow: {
+    borderTopWidth: 4,
+    borderTopColor: colors.blue
+  },
+  react: {
+    borderTopWidth: 4,
+    borderTopColor: colors.green
+  },
+  general: {
+    borderTopWidth: 4,
+    borderTopColor: colors.yellow
   }
 });
 
 export default class Info extends React.Component {
   renderHeader() {
+    const borderColor = this.props.type ? styles[this.props.type] : {};
     return (
       <View style={styles.headerContainer}>
         <View style={[styles.leftColumn, styles.sized, styles.borderTop, styles.borderTopBig]}>
           <Text style={styles.time}>8:00 - 9:00</Text>
           <Text style={styles.speaker}>R. Tirumalareddy</Text>
         </View>
-        <View style={[styles.rightColumn, styles.sized, styles.borderTop, styles.borderTopBig, styles.rethinkingRest]}>
+        <View style={[styles.rightColumn, styles.sized, styles.borderTop, borderColor]}>
           <Text style={styles.talk}>FUNCTIONAL PROGRAMMING IN JAVASCRIPT. WHAT, WHY, AND HOW.</Text>
         </View>
-        <View style={[styles.borderTopBig, styles.rethinkingRest, styles.sized, styles.center, styles.chevronContainer]}>
-          <Icon name="ion|ios-arrow-down" size={20} color="#cdcdcd" style={{ marginRight: 10, marginLeft: 5, height: 20, width: 20 }}/>
+        <View style={[styles.borderTop, styles.sized, styles.center, styles.chevronContainer, borderColor]}>
+          <Icon name="ion|ios-arrow-down" size={20} color={colors.grey} style={styles.chevron}/>
         </View>
       </View>
     );
