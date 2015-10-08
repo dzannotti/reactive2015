@@ -64,7 +64,7 @@ const tabOptions = [
   },
 ]
 
-export default class TaibBar extends React.Component {
+export default class TabBar extends React.Component {
   static propTypes = {
     goToPage: React.PropTypes.func,
     activeTab: React.PropTypes.number,
