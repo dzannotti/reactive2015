@@ -69,10 +69,9 @@ var Lightbox = React.createClass({
   componentWillMount: function() {
     this._panResponder = PanResponder.create({
       // Ask to be the responder:
-      onStartShouldSetPanResponder: (evt, gestureState) => !this.state.isAnimating,
-      onStartShouldSetPanResponderCapture: (evt, gestureState) => !this.state.isAnimating,
-      onMoveShouldSetPanResponder: (evt, gestureState) => !this.state.isAnimating,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => !this.state.isAnimating,
+      onStartShouldSetPanResponder: () => !this.state.isAnimating,
+      onMoveShouldSetPanResponder: () => !this.state.isAnimating,
+
 
       onPanResponderGrant: (evt, gestureState) => {
         this.state.pan.setValue(0);
