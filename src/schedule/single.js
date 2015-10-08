@@ -87,7 +87,7 @@ export default class Info extends React.Component {
           <Text style={styles.talk}>FUNCTIONAL PROGRAMMING IN JAVASCRIPT. WHAT, WHY, AND HOW.</Text>
         </View>
         <View style={[styles.borderTopBig, styles.rethinkingRest, styles.sized, styles.center, styles.chevronContainer]}>
-          <Icon name="ion|chevron-down" size={20} color="#cdcdcd" style={{ marginRight: 10, marginLeft: 5, height: 20, width: 20 }}/>
+          <Icon name="ion|ios-arrow-down" size={20} color="#cdcdcd" style={{ marginRight: 10, marginLeft: 5, height: 20, width: 20 }}/>
         </View>
       </View>
     );
