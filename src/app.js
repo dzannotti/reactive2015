@@ -1,4 +1,5 @@
 import React from 'react-native';
+import Relay from 'react-relay';
 import ScrollableTabView from '../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
 import Speakers from './speakers';
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class App extends React.Component {
+class App extends React.Component {
   componentDidMount() {
     if (StatusBarIOS) {
       StatusBarIOS.setStyle('light-content');
@@ -39,3 +40,24 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default Relay.createContainer(App, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on ReindexViewer {
+        allUsers(first: 5) {
+          edges {
+            node {
+              id,
+              credentials {
+                 facebook {
+                  displayName
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  },
+});

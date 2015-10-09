@@ -1,6 +1,6 @@
 import React from 'react-native';
 import Sponsor from './sponsor';
-import { Text, device } from '../utils';
+import { Text, device, colors } from '../utils';
 
 const {
   StyleSheet,
@@ -10,7 +10,8 @@ const {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: colors.white
   },
   title: {
     marginTop: 20,

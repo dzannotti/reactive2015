@@ -10,7 +10,9 @@ const {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: colors.darkBlue,
+    paddingTop: 20
   },
   links: {
     height: 25,
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   text: {
-    color: colors.black,
+    color: colors.grey,
     fontSize: 13
   }
 });

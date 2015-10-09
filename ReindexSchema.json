@@ -1,0 +1,185 @@
+[
+  {
+    "name": "User",
+    "kind": "OBJECT",
+    "interfaces": [
+      "Node"
+    ],
+    "fields": [
+      {
+        "name": "id",
+        "type": "ID",
+        "nonNull": true
+      }
+    ]
+  },
+  {
+    "name": "Company",
+    "kind": "OBJECT",
+    "interfaces": [
+      "Node"
+    ],
+    "fields": [
+      {
+        "name": "id",
+        "type": "ID",
+        "nonNull": true
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "logo",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "url",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "speakers",
+        "type": "Connection",
+        "ofType": "Speaker",
+        "reverseName": "company"
+      },
+      {
+        "name": "sponsorships",
+        "type": "Connection",
+        "ofType": "Sponsor",
+        "reverseName": "company"
+      }
+    ]
+  },
+  {
+    "name": "Sponsor",
+    "kind": "OBJECT",
+    "interfaces": [
+      "Node"
+    ],
+    "fields": [
+      {
+        "name": "id",
+        "type": "ID",
+        "nonNull": true
+      },
+      {
+        "name": "level",
+        "type": "Int",
+        "nonNull": true
+      },
+      {
+        "name": "company",
+        "type": "Company",
+        "nonNull": true,
+        "reverseName": "sponsorships"
+      }
+    ]
+  },
+  {
+    "name": "Speaker",
+    "kind": "OBJECT",
+    "interfaces": [
+      "Node"
+    ],
+    "fields": [
+      {
+        "name": "id",
+        "type": "ID",
+        "nonNull": true
+      },
+      {
+        "name": "firstName",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "lastName",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "company",
+        "type": "Company",
+        "nonNull": true,
+        "reverseName": "speakers"
+      },
+      {
+        "name": "image",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "companyRole",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "bio",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "github",
+        "type": "String"
+      },
+      {
+        "name": "twitter",
+        "type": "String"
+      },
+      {
+        "name": "web",
+        "type": "String"
+      },
+      {
+        "name": "events",
+        "type": "Connection",
+        "ofType": "Event",
+        "reverseName": "speaker"
+      }
+    ]
+  },
+  {
+    "name": "Event",
+    "kind": "OBJECT",
+    "interfaces": [
+      "Node"
+    ],
+    "fields": [
+      {
+        "name": "id",
+        "type": "ID",
+        "nonNull": true
+      },
+      {
+        "name": "startsAt",
+        "type": "Int",
+        "nonNull": true
+      },
+      {
+        "name": "endsAt",
+        "type": "Int",
+        "nonNull": true
+      },
+      {
+        "name": "speaker",
+        "type": "Speaker",
+        "reverseName": "events",
+        "nonNull": true
+      },
+      {
+        "name": "excerpt",
+        "type": "String",
+        "nonNull": true
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "nonNull": true
+      }
+    ]
+  }
+]

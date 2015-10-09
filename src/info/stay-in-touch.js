@@ -1,7 +1,7 @@
 import React from 'react-native';
 import Parallax from 'react-native-parallax';
 import { Icon } from 'react-native-icons';
-import { Text, Link, device } from '../utils';
+import { Text, Link, device, colors } from '../utils';
 
 const {
   View,
@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
   },
   container: {
     height: 200,
-    width: device.width
+    width: device.width,
+    backgroundColor: colors.white
   },
   title: {
     fontSize: 18,

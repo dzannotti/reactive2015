@@ -1,7 +1,7 @@
 import React from 'react-native';
 import Parallax from 'react-native-parallax';
 import reactMixin from 'react-mixin';
-import { colors } from '../utils';
+import { colors, device } from '../utils';
 import Author from './author';
 import Sponsors from './sponsors';
 import StayInTouch from './stay-in-touch';
@@ -15,20 +15,14 @@ const {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: colors.darkBlue,
+    width: device.width
   },
   center: {
     flexDirection: 'column',
     alignItems: 'center'
-  },
-  separator: {
-    width: 150,
-    height: 2,
-    marginTop: 20,
-    marginBottom: 20,
-    backgroundColor: colors.green
-  }
-});
+  }});
 
 @reactMixin.decorate(Parallax.Mixin)
 export default class Info extends React.Component {
@@ -44,7 +38,6 @@ export default class Info extends React.Component {
         <Rethinking/>
         <StayInTouch scrollY={this.state.parallaxScrollY}/>
         <Sponsors/>
-        <View style={styles.separator}/>
         <Author/>
       </ScrollView>
     );

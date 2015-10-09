@@ -15,7 +15,9 @@ export default class Map extends React.Component {
   render() {
     const venue = {
       latitude: 48.152,
-      longitude: 17.116
+      longitude: 17.116,
+      latitudeDelta: 0,
+      longitudeDelta: 0
     };
     return (
       <MapView

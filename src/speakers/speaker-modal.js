@@ -17,8 +17,7 @@ const modalWidth = device.width - 80;
 const styles = StyleSheet.create({
   listItem: {
     width: device.width / 2,
-    height: 100,
-    borderWidth: 0
+    height: 100
   },
   listItemOpen: {
     margin: 40,
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
   speakerCompany: {
     position: 'absolute',
     bottom: 10,
-    right: 10,
+    right: 20,
     fontSize: 16,
     color: colors.white
   },
@@ -83,15 +82,14 @@ export default class SpeakerModal extends React.Component {
     return (
       <View style={styles.listItemOpen}>
         <PImage
-          style={{ width: modalWidth, height: 100 }}
-          scrollY={this.props.scrollY}
-          overlayStyle={{ backgroundColor: 'rgba(0,0,0,0.3)'}}
-          resizeMode="cover"
+          style={{ width: modalWidth + 10, height: 100 }}
           parallaxFactor={0.3}
+          scrollY={this.lastClosedScrollY}
+          overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
+          resizeMode="cover"
           source={{ uri: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg' }}
         >
           <Text style={styles.speaker}>François De Campredon</Text>
-          <Text style={styles.speakerCompany}>Cerebral</Text>
         </PImage>
         <View style={{ width: modalWidth }}>
           <ScrollableTabView topBar renderTabBar={() => <TabBar />}>
@@ -129,10 +127,12 @@ export default class SpeakerModal extends React.Component {
     if (this.props.isOpen) {
       return this.renderOpen();
     }
+    lastClosedScrollY = this.props.scrollY;
     return (
       <View style={styles.listItem}>
         <PImage
           style={{ height: 100 }}
+          parallaxFactor={0.3}
           scrollY={this.props.scrollY}
           overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
