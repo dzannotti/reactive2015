@@ -95,9 +95,6 @@ export default class SpeakerModal extends React.Component {
       <View style={styles.listItemOpen}>
         <OImage
           style={{ width: modalWidth + 10, height: 100 }}
-          parallaxFactor={0.3}
-          scrollY={this.lastClosedScrollY}
-          overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
           source={{ uri: speaker.image }}
         >
@@ -130,17 +127,17 @@ export default class SpeakerModal extends React.Component {
   }
 
   render() {
+    const { speaker } = this.props;
+    if (speaker.firstName === '') {
+      return false;
+    }
     if (this.props.isOpen) {
       return this.renderOpen();
     }
-    const { speaker } = this.props;
     return (
       <View style={styles.listItem}>
         <OImage
           style={{ height: 100 }}
-          parallaxFactor={0.3}
-          scrollY={this.props.scrollY}
-          overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
           source={{ uri: speaker.image }}
         >
