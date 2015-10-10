@@ -19,6 +19,10 @@ This app is an entry for https://twitter.com/notbrent/status/652191654300880897
 ![http://i.imgur.com/zgwrRHc.png](http://i.imgur.com/zgwrRHc.png)
 ![http://i.imgur.com/aeKyhnB.png](http://i.imgur.com/aeKyhnB.png)
 
+# Compatibility
+* Tested on iOS8+ and iPhone5+
+* Android should work once an alternative `LinkingIOS` is provided - Unable to test
+
 # Tech Stack
 * React Native
 * Relay
