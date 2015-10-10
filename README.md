@@ -16,16 +16,13 @@ This app is an entry for https://twitter.com/notbrent/status/652191654300880897
 ![http://i.imgur.com/n3rTU7x.png](http://i.imgur.com/n3rTU7x.png)
 
 ## Schedule
-
-
-
+![http://i.imgur.com/zgwrRHc.png](http://i.imgur.com/zgwrRHc.png)
+![http://i.imgur.com/aeKyhnB.png](http://i.imgur.com/aeKyhnB.png)
 
 # Tech Stack
 * React Native
 * Relay
 * Reindex
-
-
 
 # Running the dev version
 ```
