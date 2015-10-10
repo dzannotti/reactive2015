@@ -172,7 +172,8 @@
       {
         "name": "speaker",
         "type": "Speaker",
-        "reverseName": "events"
+        "reverseName": "events",
+        "nonNull": true
       },
       {
         "name": "title",

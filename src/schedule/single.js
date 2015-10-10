@@ -136,7 +136,7 @@ export default class Info extends React.Component {
 
   renderHeader() {
     const { event } = this.props;
-    const hasExcerpt = typeof event.excerpt !== 'undefined' && event.excerpt !== '';
+    const hasExcerpt = event.excerpt !== null && typeof event.excerpt !== 'undefined' && event.excerpt !== '';
     const borderColor = event.type ? styles[this.type(event.type)] : {};
     return (
       <View style={styles.headerContainer}>
@@ -144,7 +144,7 @@ export default class Info extends React.Component {
           <Text style={styles.time}>
             {this.time(event.startsAt)} - {this.time(event.endsAt)}
           </Text>
-          <Text style={styles.speaker}>R. Tirumalareddy</Text>
+          <Text style={styles.speaker}>{event.speaker.firstName[0]}. {event.speaker.lastName}</Text>
         </View>
         <View style={[styles.rightColumn, styles.borderTop, borderColor]}>
           <Text style={styles.talk}>{this.capitalize(event.title.toLowerCase())}</Text>
@@ -163,7 +163,7 @@ export default class Info extends React.Component {
     return (
       <View style={styles.headerContainer}>
         <View style={styles.leftColumn}>
-          <Image style={styles.avatar} source={{uri: 'https://reactive2015.com/assets/img/team/daniel_steigerwald.jpg'}} />
+          <Image style={styles.avatar} source={{uri: event.speaker.image}} />
         </View>
         <View style={styles.rightColumnExcerpt}>
           <Text style={styles.talkExcerpt}>{event.excerpt}</Text>

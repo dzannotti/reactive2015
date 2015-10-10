@@ -55,6 +55,11 @@ export default Relay.createContainer(Schedule, {
               type,
               excerpt,
               title,
+              speaker {
+                firstName,
+                lastName,
+                image
+              }
             }
           }
         }

@@ -433,6 +433,16 @@ export default {
       image: 'https://reactive2015.com/assets/img/team/daniel_hengeveld.jpg',
       twitter: 'https://twitter.com/thedaniel',
       github: 'https://github.com/thedaniel'
+    },
+    { // 24 - dummy
+      firstName: '',
+      lastName: '',
+      bio: '',
+      company: '$ref(companies[35])',
+      companyRole: '',
+      image: '',
+      twitter: '',
+      github: ''
     }
   ],
   sponsors: [
@@ -501,13 +511,15 @@ export default {
       endsAt: 900,
       type: 0,
       title: 'DOORS OPEN',
-      excerpt: 'Registration'
+      excerpt: 'Registration',
+      speaker: '$ref(speakers[24])'
     },
     {
       day: 0,
       startsAt: 900,
       endsAt: 1200,
       type: 3,
+      speaker: '$ref(speakers[24])',
       title: 'Redux 101',
       excerpt: 'Learn to use cutting edge ReactJS tooling'
     },
@@ -516,6 +528,7 @@ export default {
       startsAt: 1200,
       endsAt: 1300,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'Lunch Break',
       excerpt: ''
     },
@@ -524,6 +537,7 @@ export default {
       startsAt: 1300,
       endsAt: 1600,
       type: 3,
+      speaker: '$ref(speakers[24])',
       title: 'React.JS let\'s make development fun again',
       excerpt: ''
     },
@@ -533,6 +547,7 @@ export default {
       startsAt: 800,
       endsAt: 900,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'DOORS OPEN',
       excerpt: 'Registration'
     },
@@ -541,6 +556,7 @@ export default {
       startsAt: 900,
       endsAt: 915,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'Conference opening',
       excerpt: ''
     },
@@ -549,6 +565,7 @@ export default {
       startsAt: 915,
       endsAt: 945,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'TBD',
       excerpt: '',
       speaker: '$ref(speakers[20])'
@@ -558,6 +575,7 @@ export default {
       startsAt: 945,
       endsAt: 1045,
       type: 2,
+      speaker: '',
       speaker: '$ref(speakers[16])',
       title: 'Binding the cloud with Falcor',
       excerpt: 'Imagine how easy building your web application would be if all of your data was available in-memory on the client. Falcor lets you to code that way.  Falcor is the open-source, JS data access framework that powers Netflix. Falcor lets you represent all of your cloud data sources as one virtual JSON model on the server. On the client, Falcor makes it appear as if the entire JSON model is available locally and allows you to access data the same way you would from an in-memory JSON object. Falcor retrieves the model data you request from the cloud on-demand, transparently handling all the network communication and keeping the server and client in sync.  Falcor is not a replacement for your MVC framework, your database, or your application server. Falcor fits seamlessly into your existing stack and lets the layers communicate more efficiently.  Get an inside look at the innovative data platform that powers the Netflix UIs and the new UI design patterns it enables. Learn more how Falcor powers Netflix, and how you can integrate into your existing stack.',
@@ -576,6 +594,7 @@ export default {
       startsAt: 1115,
       endsAt: 1145,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'Coffee Break'
     },
     {
@@ -610,6 +629,7 @@ export default {
       startsAt: 1345,
       endsAt: 1445,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'Lunch Break'
     },
     {
@@ -653,6 +673,7 @@ export default {
       startsAt: 1645,
       endsAt: 1715,
       title: 'Coffee Break',
+      speaker: '$ref(speakers[24])',
       type: 0,
     },
     {
@@ -678,6 +699,7 @@ export default {
       startsAt: 1830,
       endsAt: 1930,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'LIGHTNING TALKS'
     },
     {
@@ -685,6 +707,7 @@ export default {
       startsAt: 1930,
       endsAt: 1930,
       type: 0,
+      speaker: '$ref(speakers[24])',
       title: 'Doors Closing'
     },
     // day 2
@@ -692,6 +715,7 @@ export default {
       day: 2,
       startsAt: 830,
       endsAt: 900,
+      speaker: '$ref(speakers[24])',
       title: 'Doors Open',
       type: 0
     },
@@ -725,6 +749,7 @@ export default {
       day: 2,
       startsAt: 1045,
       endsAt: 1115,
+      speaker: '$ref(speakers[24])',
       title: 'Coffee Break',
       type: 0
     },
@@ -759,6 +784,7 @@ export default {
       day: 2,
       startsAt: 1315,
       endsAt: 1415,
+      speaker: '$ref(speakers[24])',
       title: 'Lunch Break',
       type: 1
     },
@@ -801,6 +827,7 @@ export default {
       day: 2,
       startsAt: 1615,
       endsAt: 1645,
+      speaker: '$ref(speakers[24])',
       title: 'Coffee Break',
       type: 0
     },
@@ -834,6 +861,7 @@ export default {
       day: 2,
       startsAt: 1830,
       endsAt: 1900,
+      speaker: '$ref(speakers[24])',
       title: 'Closing Cerimony',
       type: 0
     },
@@ -841,6 +869,7 @@ export default {
       day: 2,
       startsAt: 1900,
       endsAt: 1900,
+      speaker: '$ref(speakers[24])',
       title: 'Door Closing',
       type: 0
     }

@@ -40,9 +40,10 @@ npm run lint
 ```
 
 # To debug
+* Schedule Speaker name + image cannot be fetched via relay
 
 # To source
-* Suitable speaker images for the parallax
+* Suitable speaker images, some are cut out because they are not square shaped
 
 # Why some deps are copy pasted inside
 
