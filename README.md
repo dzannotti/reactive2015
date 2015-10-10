@@ -36,9 +36,6 @@ npm install
 npm run lint
 ```
 
-# To debug
-* Schedule Speaker name + image cannot be fetched via relay
-
 # To source
 * Suitable speaker images, some are cut out because they are not square shaped
 
