@@ -1,9 +1,8 @@
 import React from 'react-native';
-import { Image as PImage } from 'react-native-parallax';
 import { Icon } from 'react-native-icons';
 import ScrollableTabView from '../../react-native-scrollable-tab-view';
 import TabBar from './tab-bar';
-import { Link, device, Text, colors } from '../utils';
+import { Link, Text, Image as OImage, device, colors } from '../utils';
 
 const {
   View,
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     position: 'absolute',
     top: 10,
-    left: 18,
+    left: 3,
     fontSize: 20,
     color: colors.white
   },
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
   speakerCompany: {
     position: 'absolute',
     bottom: 10,
-    right: 20,
+    right: 10,
     fontSize: 16,
     color: colors.white
   },
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
   },
   companyLogo: {
     width: device.width,
-    height: 25,
+    height: 35,
     resizeMode: 'contain'
   },
   scrollContainer: {
@@ -78,43 +77,50 @@ const styles = StyleSheet.create({
 });
 
 export default class SpeakerModal extends React.Component {
+  renderLink(type, uri) {
+    if (typeof uri === 'undefined' || uri === '') {
+      return false;
+    }
+    return (
+      <Link source={{ uri }}>
+        <Icon name={type} size={30} color={colors.black} style={styles.linksIcon} />
+      </Link>
+    );
+  }
+
+
   renderOpen() {
+    const { speaker } = this.props;
     return (
       <View style={styles.listItemOpen}>
-        <PImage
+        <OImage
           style={{ width: modalWidth + 10, height: 100 }}
           parallaxFactor={0.3}
           scrollY={this.lastClosedScrollY}
           overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
-          source={{ uri: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg' }}
+          source={{ uri: speaker.image }}
         >
-          <Text style={styles.speaker}>François De Campredon</Text>
-        </PImage>
+          <Text style={styles.speaker}>{speaker.firstName} {speaker.lastName}</Text>
+        </OImage>
         <View style={{ width: modalWidth }}>
           <ScrollableTabView topBar renderTabBar={() => <TabBar />}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-              <Text style={{ color: colors.black }}>Works for Mozilla on the Firefox Developer Tools, mostly trying to make debugging JavaScript better. He's spent the last 8 years studying programming languages like Lisp and Scheme, and trying to bring various ideas to JavaScript. He likes to write in-depth articles about interesting programming ideas. Most of his free time is now happily dedicated to his daughter.</Text>
+              <Text style={{ color: colors.black }}>{speaker.bio}</Text>
               <View style={styles.links}>
-                <Link source={{ uri: 'http://twitter.com/ReactiveConf' }}>
-                  <Icon name="ion|social-twitter" size={30} color={colors.black} style={styles.linksIcon} />
-                </Link>
-                <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
-                  <Icon name="ion|social-facebook" size={30} color={colors.black} style={styles.linksIcon} />
-                </Link>
-                <Link source={{ uri: 'http://www.facebook.com/events/135898716752704/' }}>
-                  <Icon name="ion|ios-world-outline" size={30} color={colors.black} style={styles.linksIcon} />
-                </Link>
+                {this.renderLink('ion|social-twitter', speaker.twitter)}
+                {this.renderLink('ion|social-github', speaker.github)}
+                {this.renderLink('ion|ios-world-outline', speaker.web)}
               </View>
             </ScrollView>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
               <View style={styles.links}>
-                <Link source={{ uri: 'http://www.facebook.com/ReactiveConf/timeline/' }}>
-                  <Image style={styles.companyLogo} source={{ uri: 'https://reactive2015.com/assets/img/companies/mozilla_logo.png' }} />
+                <Link source={{ uri: speaker.company.url }}>
+                  <Image style={styles.companyLogo} source={{ uri: speaker.company.logo }} />
                 </Link>
               </View>
               <View style={styles.links}>
-                <Text style={styles.role}>UX Engineer</Text>
+                <Text style={styles.role}>{speaker.companyRole}</Text>
               </View>
             </ScrollView>
           </ScrollableTabView>
@@ -127,20 +133,20 @@ export default class SpeakerModal extends React.Component {
     if (this.props.isOpen) {
       return this.renderOpen();
     }
-    lastClosedScrollY = this.props.scrollY;
+    const { speaker } = this.props;
     return (
       <View style={styles.listItem}>
-        <PImage
+        <OImage
           style={{ height: 100 }}
           parallaxFactor={0.3}
           scrollY={this.props.scrollY}
           overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)'}}
           resizeMode="cover"
-          source={{ uri: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg' }}
+          source={{ uri: speaker.image }}
         >
-          <Text style={styles.speaker}>François De Campredon</Text>
-          <Text style={styles.speakerCompany}>Cerebral</Text>
-        </PImage>
+          <Text style={styles.speaker}>{speaker.firstName} {speaker.lastName}</Text>
+          <Text style={styles.speakerCompany}>{speaker.company.name}</Text>
+        </OImage>
       </View>
     );
   }

@@ -31,10 +31,10 @@ class App extends React.Component {
       <View style={styles.container}>
         <Navbar/>
         <ScrollableTabView renderTabBar={() => <TabBar />}>
-          <Schedule/>
-          <Speakers/>
+          <Schedule viewer={this.props.viewer}/>
+          <Speakers viewer={this.props.viewer}/>
           <Map/>
-          <Info/>
+          <Info viewer={this.props.viewer}/>
         </ScrollableTabView>
       </View>
     );
@@ -45,19 +45,9 @@ export default Relay.createContainer(App, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on ReindexViewer {
-        allUsers(first: 5) {
-          edges {
-            node {
-              id,
-              credentials {
-                 facebook {
-                  displayName
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  },
+        ${Speakers.getFragment('viewer')}
+        ${Info.getFragment('viewer')}
+        ${Schedule.getFragment('viewer')}
+      }`
+  }
 });

@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
   },
   bronze: {
     height: 20
+  },
+  media: {
+    height: 20
   }
 });
 

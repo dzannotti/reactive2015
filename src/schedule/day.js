@@ -16,11 +16,7 @@ export default class Info extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Single/>
-        <Single type="rethinking"/>
-        <Single type="dataflow"/>
-        <Single type="react"/>
-        <Single type="general"/>
+        {this.props.events.map((event, idx) => <Single key={idx} event={event}/>)}
       </ScrollView>
     );
   }

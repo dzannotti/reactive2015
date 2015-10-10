@@ -1,4 +1,5 @@
 {
+  "plugins": ["./build/babelRelayPlugin"],
   "retainLines": true,
   "compact": true,
   "comments": false,
@@ -32,6 +33,6 @@
     "flow",
     "react",
     "react.displayName"
-    ],
+  ],
   "sourceMaps": false
 }

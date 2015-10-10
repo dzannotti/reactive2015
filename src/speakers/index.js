@@ -1,5 +1,5 @@
 import React from 'react-native';
-import Parallax from 'react-native-parallax';
+import Relay from 'react-relay';
 import reactMixin from 'react-mixin';
 import Speaker from './speaker';
 
@@ -8,48 +8,42 @@ const {
   View
 } = React;
 
-@reactMixin.decorate(Parallax.Mixin)
-export default class Spakers extends React.Component {
+class Speakers extends React.Component {
   render() {
+    const speakers = this.props.viewer.allSpeakers.edges;
     return (
-      <ScrollView
-        scrollEventThrottle={16}
-        onScroll={this.onParallaxScroll}
-        automaticallyAdjustContentInsets={false}
-      >
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, height: 100}}>
-          <Speaker scrollY={this.state.parallaxScrollY} left/>
-          <Speaker scrollY={this.state.parallaxScrollY}/>
+      <ScrollView automaticallyAdjustContentInsets={false}>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1 }}>
+          {speakers.map((speaker, idx) => <Speaker key={idx} speaker={speaker.node}/>)}
         </View>
       </ScrollView>
     );
   }
 }
+
+export default Relay.createContainer(Speakers, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on ReindexViewer {
+        allSpeakers (first: 100) {
+          edges {
+            node {
+              firstName,
+              lastName,
+              image,
+              bio,
+              twitter,
+              web,
+              github,
+              companyRole,
+              company {
+                name,
+                logo,
+                url
+              }
+            }
+          }
+        }
+      }`
+  }
+});

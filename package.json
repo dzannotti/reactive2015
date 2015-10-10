@@ -8,7 +8,7 @@
     "import-data": "source ./reindex-env.sh && babel-node import-data.js",
     "graphiql": "source ./reindex-env.sh && reindex graphiql",
     "schema-fetch": "source ./reindex-env.sh && reindex schema-fetch",
-    "schema-push": "source ./reindex-env.sh && reindex schema-push",
+    "schema-push": "source ./reindex-env.sh && reindex schema-push --force",
     "schema-relay": "source ./reindex-env.sh && reindex schema-relay data/schema.json"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "react-native-browser-polyfill": "^0.1.1",
     "react-native-icons": "^0.4.0",
     "react-native-parallax": "^0.1.3",
+    "react-native-spinkit": "0.0.5",
     "react-relay": "tmitchel2/relay",
     "reindex-js": "^0.3.0"
   },

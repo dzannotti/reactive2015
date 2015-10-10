@@ -1,4 +1,5 @@
 import React from 'react-native';
+import Relay from 'react-relay';
 import Parallax from 'react-native-parallax';
 import reactMixin from 'react-mixin';
 import { colors, device } from '../utils';
@@ -8,7 +9,6 @@ import StayInTouch from './stay-in-touch';
 import Rethinking from './rethinking';
 
 const {
-  View,
   StyleSheet,
   ScrollView
 } = React;
@@ -22,10 +22,11 @@ const styles = StyleSheet.create({
   center: {
     flexDirection: 'column',
     alignItems: 'center'
-  }});
+  }
+});
 
 @reactMixin.decorate(Parallax.Mixin)
-export default class Info extends React.Component {
+class Info extends React.Component {
   render() {
     return (
       <ScrollView
@@ -37,9 +38,28 @@ export default class Info extends React.Component {
       >
         <Rethinking/>
         <StayInTouch scrollY={this.state.parallaxScrollY}/>
-        <Sponsors/>
+        <Sponsors sponsors={this.props.viewer.allSponsors.edges}/>
         <Author/>
       </ScrollView>
     );
   }
 }
+
+export default Relay.createContainer(Info, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on ReindexViewer {
+        allSponsors(first: 100) {
+          edges {
+            node {
+              level,
+              company {
+                logo
+                url
+              }
+            }
+          }
+        }
+      }`
+  }
+});

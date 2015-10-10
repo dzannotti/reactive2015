@@ -10,7 +10,7 @@ export default class Speaker extends React.Component {
   render() {
     return (
       <Lightbox activeProps={{ isOpen: true }}>
-        { (props) => <View><SpeakerModal scrollY={this.props.scrollY} {...props}/></View> }
+        { (props) => <View><SpeakerModal speaker={this.props.speaker} {...props}/></View> }
       </Lightbox>
     );
   }

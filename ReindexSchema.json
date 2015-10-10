@@ -155,6 +155,11 @@
         "nonNull": true
       },
       {
+        "name": "day",
+        "type": "Int",
+        "nonNull": true
+      },
+      {
         "name": "startsAt",
         "type": "Int",
         "nonNull": true
@@ -167,17 +172,20 @@
       {
         "name": "speaker",
         "type": "Speaker",
-        "reverseName": "events",
+        "reverseName": "events"
+      },
+      {
+        "name": "title",
+        "type": "String",
         "nonNull": true
       },
       {
         "name": "excerpt",
-        "type": "String",
-        "nonNull": true
+        "type": "String"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "Int",
         "nonNull": true
       }
     ]

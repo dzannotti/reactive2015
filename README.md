@@ -1,3 +1,17 @@
+## Reactive 2015 - Contest entry
+This app is an entry for https://twitter.com/notbrent/status/652191654300880897
+
+
+Screenshots:
+
+
+## Tech Stack
+* React Native
+* Relay
+* Reindex
+
+
+
 # Running the dev version
 ```
 npm install

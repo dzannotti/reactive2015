@@ -97,38 +97,63 @@ const styles = StyleSheet.create({
 });
 
 export default class Info extends React.Component {
+  time(val) {
+    return Math.floor(val/100) + ':00';
+  }
+  type(val) {
+    const types = [
+      'dataflow',
+      'rethinking',
+      'react',
+      'general'
+    ];
+    if (val < 1 || val > 4 ) {
+      return 'center';
+    }
+    return types[val - 1];
+  }
+
   renderHeader() {
-    const borderColor = this.props.type ? styles[this.props.type] : {};
+    const { event } = this.props;
+    const borderColor = event.type ? styles[this.type(event.type)] : {};
     return (
       <View style={styles.headerContainer}>
         <View style={[styles.leftColumn, styles.sized, styles.borderTop, styles.borderTopBig]}>
-          <Text style={styles.time}>8:00 - 9:00</Text>
+          <Text style={styles.time}>
+            {this.time(event.startsAt)} - {this.time(event.endsAt)}
+          </Text>
           <Text style={styles.speaker}>R. Tirumalareddy</Text>
         </View>
         <View style={[styles.rightColumn, styles.sized, styles.borderTop, borderColor]}>
-          <Text style={styles.talk}>FUNCTIONAL PROGRAMMING IN JAVASCRIPT. WHAT, WHY, AND HOW.</Text>
+          <Text style={styles.talk}>{event.title}</Text>
         </View>
-        <View style={[styles.borderTop, styles.sized, styles.center, styles.chevronContainer, borderColor]}>
-          <Icon name="ion|ios-arrow-down" size={20} color={colors.grey} style={styles.chevron}/>
-        </View>
+        { this.props.excerpt !== '' &&
+          <View style={[styles.borderTop, styles.sized, styles.center, styles.chevronContainer, borderColor]}>
+            <Icon name="ion|ios-arrow-down" size={20} color={colors.grey} style={styles.chevron}/>
+          </View>
+        }
       </View>
     );
   }
 
   renderContent() {
+    const { event } = this.props;
     return (
       <View style={styles.headerContainer}>
         <View style={styles.leftColumn}>
           <Image style={styles.avatar} source={{uri: 'https://reactive2015.com/assets/img/team/daniel_steigerwald.jpg'}} />
         </View>
         <View style={styles.rightColumn}>
-          <Text style={styles.talkExcerpt}>As programs get bigger, they also become more complex and harder to understand. We all think ourselves pretty clever, of course, but we are mere human beings, and even a moderate amount of chaos tends to baffle us. And then it all goes downhill. Working on something you do not really understand is a bit like cutting random wires on those time-activated bombs they always have in movies. If you are lucky, you might get the right one ― especially if you are the hero of the movie and strike a suitably dramatic pose ― but there is always the possibility of blowing everything up.</Text>
+          <Text style={styles.talkExcerpt}>{event.excerpt}</Text>
         </View>
       </View>
     );
   }
 
   render() {
+    if (this.props.event.excerpt === '') {
+      return this.renderHeader();
+    }
     return (
       <Accordion
         underlayColor="#f0f0f0"

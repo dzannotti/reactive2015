@@ -27,6 +27,7 @@
 		3E51E4F71BC45C7900C64BE2 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E51E4F51BC45C7900C64BE2 /* Raleway-Light.ttf */; };
 		3E51E4F81BC45C7900C64BE2 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E51E4F61BC45C7900C64BE2 /* Raleway-Regular.ttf */; };
 		3E51E4FA1BC461CD00C64BE2 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E51E4F91BC461CD00C64BE2 /* Raleway-SemiBold.ttf */; };
+		3EB91A051BC89B3700F6BA80 /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB91A041BC89B2F00F6BA80 /* libRNSpinkit.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,13 @@
 			remoteGlobalIDString = 2F5A3EB81ACDBF8000439386;
 			remoteInfo = ReactNativeIcons;
 		};
+		3EB91A031BC89B2F00F6BA80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EB919F41BC89B2F00F6BA80 /* RNSpinkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
+			remoteInfo = RNSpinkit;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -142,6 +150,7 @@
 		3E51E4F51BC45C7900C64BE2 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Light.ttf"; path = "../fonts/Raleway-Light.ttf"; sourceTree = "<group>"; };
 		3E51E4F61BC45C7900C64BE2 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		3E51E4F91BC461CD00C64BE2 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "../fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		3EB919F41BC89B2F00F6BA80 /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB91A051BC89B3700F6BA80 /* libRNSpinkit.a in Frameworks */,
 				3E51E4F41BC34CB500C64BE2 /* libReactNativeIcons.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -278,6 +288,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3EB919F51BC89B2F00F6BA80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EB91A041BC89B2F00F6BA80 /* libRNSpinkit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +332,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				3EB919F41BC89B2F00F6BA80 /* RNSpinkit.xcodeproj */,
 				3E51E4F21BC34C9E00C64BE2 /* ionicons.ttf */,
 				3E51E4F51BC45C7900C64BE2 /* Raleway-Light.ttf */,
 				3E51E4F91BC461CD00C64BE2 /* Raleway-SemiBold.ttf */,
@@ -446,6 +465,10 @@
 					ProductGroup = 3E51E4E31BC34C2800C64BE2 /* Products */;
 					ProjectRef = 3E51E4E21BC34C2800C64BE2 /* ReactNativeIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = 3EB919F51BC89B2F00F6BA80 /* Products */;
+					ProjectRef = 3EB919F41BC89B2F00F6BA80 /* RNSpinkit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -517,6 +540,13 @@
 			fileType = archive.ar;
 			path = libReactNativeIcons.a;
 			remoteRef = 3E51E4F01BC34C2900C64BE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EB91A041BC89B2F00F6BA80 /* libRNSpinkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSpinkit.a;
+			remoteRef = 3EB91A031BC89B2F00F6BA80 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
