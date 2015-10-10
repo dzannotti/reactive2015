@@ -23,7 +23,7 @@ This app is an entry for https://twitter.com/notbrent/status/652191654300880897
 # Tech Stack
 * React Native
 * Relay
-* Reindex (thanks to @fson for early access)
+* Reindex (thanks to @VilleImmonen for early access)
 
 # Running the dev version
 ```
