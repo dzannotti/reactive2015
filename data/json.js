@@ -2,183 +2,183 @@ export default {
   companies: [
     { // 0
       name: 'Mozilla',
-      logo: 'https://reactive2015.com/assets/img/companies/mozilla_logo.png',
-      url: 'http://www.mozilla.org'
+      logo: 'http://reactive2015.com/assets/img/companies/mozilla_logo.png',
+      url: 'https://www.mozilla.org'
     },
     { // 1
       name: 'Futurice',
-      logo: 'http://summit.devaamo.fi/2013/wp-content/uploads/futurice_logo_horizK_k_rgb_sm.jpg',
-      url: 'http://futurice.com'
+      logo: 'https://summit.devaamo.fi/2013/wp-content/uploads/futurice_logo_horizK_k_rgb_sm.jpg',
+      url: 'https://futurice.com'
     },
     { // 2
       name: 'O.C. Tanner',
-      logo: 'https://lh6.googleusercontent.com/-o79AV4GbNTU/AAAAAAAAAAI/AAAAAAAAAAA/c1Q5wGWLDxo/s0-c-k-no-ns/photo.jpg',
-      url: 'http://www.octanner.com'
+      logo: 'http://lh6.googleusercontent.com/-o79AV4GbNTU/AAAAAAAAAAI/AAAAAAAAAAA/c1Q5wGWLDxo/s0-c-k-no-ns/photo.jpg',
+      url: 'https://www.octanner.com'
     },
     { // 3
       name: 'Datascript',
-      logo: 'https://camo.githubusercontent.com/e6137391335c1eb7eed64ec74058232ea4852d29/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f3536313538302f696d67732f646174617363726970745f6c6f676f2e737667',
-      url: 'https://github.com/tonsky/datascript'
+      logo: 'http://camo.githubusercontent.com/e6137391335c1eb7eed64ec74058232ea4852d29/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f3536313538302f696d67732f646174617363726970745f6c6f676f2e737667',
+      url: 'http://github.com/tonsky/datascript'
     },
     { // 4
       name: 'SwarmJS',
-      logo: 'http://swarmjs.github.io/images/site-logo.png',
-      url: 'http://swarmjs.github.io/'
+      logo: 'https://swarmjs.github.io/images/site-logo.png',
+      url: 'https://swarmjs.github.io/'
     },
     { // 5
       name: 'Yahoo!',
-      logo: 'https://lh3.googleusercontent.com/-REC9hG2lrlY/AAAAAAAAAAI/AAAAAAAAAAA/_OhxYdOH8kw/s0-c-k-no-ns/photo.jpg',
-      url: 'http://www.yahoo.com'
+      logo: 'http://lh3.googleusercontent.com/-REC9hG2lrlY/AAAAAAAAAAI/AAAAAAAAAAA/_OhxYdOH8kw/s0-c-k-no-ns/photo.jpg',
+      url: 'https://www.yahoo.com'
     },
     { // 6
       name: 'EsteJS',
-      logo: 'https://cloud.githubusercontent.com/assets/66249/6515265/b91f0fb8-c388-11e4-857e-c90902e0b7a1.png',
-      url: 'https://este.herokuapp.com/'
+      logo: 'http://cloud.githubusercontent.com/assets/66249/6515265/b91f0fb8-c388-11e4-857e-c90902e0b7a1.png',
+      url: 'http://este.herokuapp.com/'
     },
     { // 7
       name: 'CSS Modules',
-      logo: 'https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png',
-      url: 'https://github.com/css-modules/css-modules'
+      logo: 'http://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png',
+      url: 'http://github.com/css-modules/css-modules'
     },
     { // 8
       name: 'Glint',
-      logo: 'http://static.tumblr.com/79722dd14845faf1bf6aaccd937e3e5c/dgy23a9/rBdnaituu/tumblr_static_screen_shot_2014-08-18_at_2.18.16_pm.png',
-      url: 'http://cloudfuji.us5.list-manage.com/subscribe?u=ccb3f5fa85ea8ce628511d218&id=b4d4aa2318'
+      logo: 'https://static.tumblr.com/79722dd14845faf1bf6aaccd937e3e5c/dgy23a9/rBdnaituu/tumblr_static_screen_shot_2014-08-18_at_2.18.16_pm.png',
+      url: 'https://cloudfuji.us5.list-manage.com/subscribe?u=ccb3f5fa85ea8ce628511d218&id=b4d4aa2318'
     },
     { // 9
       name: 'Trojsten.sk',
       logo: '',
-      url: 'http://http://trojsten.sk/'
+      url: 'https://https://trojsten.sk/'
     },
     { // 10
       name: 'Cerebral',
-      logo: 'https://github.com/christianalfoni/cerebral/raw/master/images/logo.png',
-      url: 'https://github.com/christianalfoni/cerebral'
+      logo: 'http://github.com/christianalfoni/cerebral/raw/master/images/logo.png',
+      url: 'http://github.com/christianalfoni/cerebral'
     },
     { // 11
       name: 'Fadio IT',
-      logo: 'https://pbs.twimg.com/profile_images/629214522100842496/4NJ6-qnU_400x400.png',
-      url: 'http://www.fadio.it/'
+      logo: 'http://pbs.twimg.com/profile_images/629214522100842496/4NJ6-qnU_400x400.png',
+      url: 'https://www.fadio.it/'
     },
     { // 12
       name: 'Socket.io',
-      logo: 'https://twitter.com/SocketIO',
-      url: 'http://socket.io/'
+      logo: 'http://twitter.com/SocketIO',
+      url: 'https://socket.io/'
     },
     { // 13
       name: 'Mendix',
-      logo: 'https://pbs.twimg.com/profile_images/631117839395651584/zvmuFsKu_400x400.png',
-      url: 'https://www.mendix.com/'
+      logo: 'http://pbs.twimg.com/profile_images/631117839395651584/zvmuFsKu_400x400.png',
+      url: 'http://www.mendix.com/'
     },
     { // 14
       name: 'Noredink',
-      logo: 'https://www.noredink.com/',
-      url: 'https://d2dtbqe8cwmx9c.cloudfront.net/assets/logo-4ce1f57e1ab9c110cc1765e0dba76e95.png'
+      logo: 'http://www.noredink.com/',
+      url: 'http://d2dtbqe8cwmx9c.cloudfront.net/assets/logo-4ce1f57e1ab9c110cc1765e0dba76e95.png'
     },
     { // 15
       name: 'RN Playground',
-      logo: 'https://rnplay.org/assets/react-native-playground-logo-1125aca26458daf5c30f935cd3489cf3279ee227c3e22ca2e2d245499776ca42.svg',
-      url: 'https://rnplay.org/'
+      logo: 'http://rnplay.org/assets/react-native-playground-logo-1125aca26458daf5c30f935cd3489cf3279ee227c3e22ca2e2d245499776ca42.svg',
+      url: 'http://rnplay.org/'
     },
     { // 16
       name: 'Netflix',
-      logo: 'http://d1oi7t5trwfj5d.cloudfront.net/28/80/8e9811064c03bc4481d1db097dc6/netflix-logo.png',
-      url: 'https://www.netflix.com'
+      logo: 'https://d1oi7t5trwfj5d.cloudfront.net/28/80/8e9811064c03bc4481d1db097dc6/netflix-logo.png',
+      url: 'http://www.netflix.com'
     },
     { // 17
       name: 'VacuumLabs',
-      logo: 'https://reactive2015.com/assets/img/sponsor/sp3.png',
-      url: 'http://vacuumlabs.com/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/sp3.png',
+      url: 'https://vacuumlabs.com/'
     },
     { // 18
       name: 'Code First: Girls',
-      logo: 'http://www.codefirstgirls.org.uk/uploads/1/9/8/9/19897181/1404924530.png',
-      url: 'http://www.codefirstgirls.org.uk/'
+      logo: 'https://www.codefirstgirls.org.uk/uploads/1/9/8/9/19897181/1404924530.png',
+      url: 'https://www.codefirstgirls.org.uk/'
     },
     { // 19
       name: 'Exponent',
-      logo: 'http://d3lwq5rlu14cro.cloudfront.net/v0/pmEUQbj7N1m95nXyF7j7.png',
-      url: 'http://exponentjs.com/'
+      logo: 'https://d3lwq5rlu14cro.cloudfront.net/v0/pmEUQbj7N1m95nXyF7j7.png',
+      url: 'https://exponentjs.com/'
     },
     { // 20
       name: 'Facebook',
-      logo: 'http://www.underconsideration.com/brandnew/archives/facebook_2015_logo_detail.png',
-      url: 'http://www.facebook.com'
+      logo: 'https://www.underconsideration.com/brandnew/archives/facebook_2015_logo_detail.png',
+      url: 'https://www.facebook.com'
     },
     { // 21
       name: 'FormidableLabs',
-      logo: 'https://reactive2015.com/assets/img/sponsor/formidable_labs.png',
-      url: 'http://formidablelabs.com'
+      logo: 'http://reactive2015.com/assets/img/sponsor/formidable_labs.png',
+      url: 'https://formidablelabs.com'
     },
     { // 22
       name: 'STRV',
-      logo: 'https://reactive2015.com/assets/img/sponsor/strv.png',
-      url: 'http://www.strv.com/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/strv.png',
+      url: 'https://www.strv.com/'
     },
     { // 23
       name: 'liftago',
-      logo: 'https://reactive2015.com/assets/img/sponsor/logo_liftago.png',
-      url: 'https://reactive2015.com/assets/img/sponsor/logo_liftago.png'
+      logo: 'http://reactive2015.com/assets/img/sponsor/logo_liftago.png',
+      url: 'http://reactive2015.com/assets/img/sponsor/logo_liftago.png'
     },
     { // 24
       name: 'Smart base',
-      logo: 'https://reactive2015.com/assets/img/sponsor/sp5.png',
-      url: 'http://smartbase.sk/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/sp5.png',
+      url: 'https://smartbase.sk/'
     },
     { // 25
       name: 'Promiseo',
-      logo: 'https://reactive2015.com/assets/img/sponsor/promiseo_logo.png',
-      url: 'http://promiseo.com/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/promiseo_logo.png',
+      url: 'https://promiseo.com/'
     },
     { // 26
       name: 'ReactJS.de',
-      logo: 'https://reactive2015.com/assets/img/sponsor/reactjsdeblack.png',
-      url: 'http://reactjs.de/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/reactjsdeblack.png',
+      url: 'https://reactjs.de/'
     },
     { // 27
       name: 'zdrojak.cz',
-      logo: 'https://reactive2015.com/assets/img/sponsor/zdrojakcz.png',
-      url: 'http://www.zdrojak.cz/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/zdrojakcz.png',
+      url: 'https://www.zdrojak.cz/'
     },
     { // 28
       name: 'FEVR',
-      logo: 'https://reactive2015.com/assets/img/sponsor/fevrit.png',
-      url: 'http://www.fevr.it/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/fevrit.png',
+      url: 'https://www.fevr.it/'
     },
     { // 29
       name: 'RisingStack',
-      logo: 'https://reactive2015.com/assets/img/sponsor/rising_stack.png',
-      url: 'https://risingstack.com/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/rising_stack.png',
+      url: 'http://risingstack.com/'
     },
     { // 30
       name: 'Robime.it',
-      logo: 'https://reactive2015.com/assets/img/sponsor/robime-it-logo.png',
-      url: 'http://www.robime.it/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/robime-it-logo.png',
+      url: 'https://www.robime.it/'
     },
     { // 31
       name: 'PC REVUE',
-      logo: 'https://reactive2015.com/assets/img/sponsor/pc-revue.png',
-      url: 'http://www.pcrevue.sk/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/pc-revue.png',
+      url: 'https://www.pcrevue.sk/'
     },
     { // 32
       name: 'ComputerWorld',
-      logo: 'https://reactive2015.com/assets/img/sponsor/cw.png',
-      url: 'http://www.computerworld.com/'
+      logo: 'http://reactive2015.com/assets/img/sponsor/cw.png',
+      url: 'https://www.computerworld.com/'
     },
     { // 33
       name: 'Firefox',
-      logo: 'https://reactive2015.com/assets/img/sponsor/firefox_developer.png',
-      url: 'https://firefox.com/developer'
+      logo: 'http://reactive2015.com/assets/img/sponsor/firefox_developer.png',
+      url: 'http://firefox.com/developer'
     },
     { // 34
       name: 'Explosive Tiles',
-      logo: 'http://explosivetitles.com/wp-content/uploads/2014/03/Logo-black1.png',
-      url: 'http://explosivetitles.com/'
+      logo: 'https://explosivetitles.com/wp-content/uploads/2014/03/Logo-black1.png',
+      url: 'https://explosivetitles.com/'
     },
     { // 35
       name: 'GitHub',
-      logo: 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png',
-      url: 'https://github.com/'
+      logo: 'http://assets-cdn.github.com/images/modules/logos_page/Octocat.png',
+      url: 'http://github.com/'
     }
   ],
   speakers: [
@@ -188,10 +188,10 @@ export default {
       bio: 'Andre is a user interface engineer at Futurice, with extensive knowledge in reactive programming. He is a contributor to RxJS, has built RxMarbles, written an introduction to reactive programming which went viral, and collaborated to design ReactiveX.io. His current mission is to redefine how we understand and structure user interfaces with the reactive web framework Cycle.js.',
       company: '$ref(companies[1])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/andre_staltz.jpg',
-      twitter: 'https://twitter.com/andrestaltz',
-      github: 'https://github.com/staltz',
-      web: 'http://staltz.com/'
+      image: 'http://reactive2015.com/assets/img/team/andre_staltz.jpg',
+      twitter: 'http://twitter.com/andrestaltz',
+      github: 'http://github.com/staltz',
+      web: 'https://staltz.com/'
     },
     { // 1
       firstName: 'Julia',
@@ -199,9 +199,9 @@ export default {
       bio: 'Front-end developer from Utah, using ReactJS and ImmutableJS . Loves functional programming, currently learning Racket and Haskell.',
       company: '$ref(companies[2])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/julia_gao.jpg',
-      twitter: 'https://twitter.com/ryoia',
-      github: 'https://github.com/ryoia'
+      image: 'http://reactive2015.com/assets/img/team/julia_gao.jpg',
+      twitter: 'http://twitter.com/ryoia',
+      github: 'http://github.com/ryoia'
     },
     { // 2
       firstName: 'Nikita',
@@ -209,10 +209,10 @@ export default {
       bio: 'For the past ten years Nikita Prokopov has been building web interfaces, backends and distributed systems in Clojure, Erlang, Python, Java. Long-time blogger, UX enthusiast and Clojure evangelist from Novosibirsk, Russia.',
       company: '$ref(companies[3])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/nikita_prokopov.jpg',
-      twitter: 'https://twitter.com/nikitonsky',
-      github: 'https://github.com/tonsky',
-      web: 'http://tonsky.me/'
+      image: 'http://reactive2015.com/assets/img/team/nikita_prokopov.jpg',
+      twitter: 'http://twitter.com/nikitonsky',
+      github: 'http://github.com/tonsky',
+      web: 'https://tonsky.me/'
     },
     { // 3
       firstName: 'Victor',
@@ -220,9 +220,9 @@ export default {
       bio: 'Researching deep hypertext, distributed systems and the general information metabolism of the society.',
       company:'$ref(companies[4])',
       companyRole: 'Founder',
-      image: 'https://reactive2015.com/assets/img/team/victor_grishchenko.jpg',
-      twitter: 'https://twitter.com/gritzko',
-      github: 'https://github.com/gritzko'
+      image: 'http://reactive2015.com/assets/img/team/victor_grishchenko.jpg',
+      twitter: 'http://twitter.com/gritzko',
+      github: 'http://github.com/gritzko'
     },
     { // 4
       firstName: 'Rajiv',
@@ -230,9 +230,9 @@ export default {
       bio: 'Rajiv is software engineer at Yahoo working on node.js and Fluxible (Universal Flux and React) frontends that power high-traffic web applications.',
       company: '$ref(companies[5])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/rajiv_tirumalareddy.jpg',
-      twitter: 'https://twitter.com/rajivontherocks',
-      github: 'https://github.com/Vijar'
+      image: 'http://reactive2015.com/assets/img/team/rajiv_tirumalareddy.jpg',
+      twitter: 'http://twitter.com/rajivontherocks',
+      github: 'http://github.com/Vijar'
     },
     {
       // 5
@@ -241,9 +241,9 @@ export default {
       bio: 'Mike is a Full-Stack Developer at Man+Moon bringing real-time experience to thousands of people with a help of Javascript. Involved in React.js community for past few months, Mike recently jumped in onto the Este.js bandwagon where he helps maintaining the most complete React/Flux dev stack. As well as contributing to other node-based projects such as Keystone, he is also a NodeSchool mentor helping other people get started with Node.js platform. In his free time, apart from reading books and exploring today\'s new javascript framework, he plays guitar and tries to make it up to his girlfriend for all the time spent on the Internet.',
       company: '$ref(companies[34])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/mike_grabowski.jpg',
-      twitter: 'https://twitter.com/grabbou',
-      github: 'https://github.com/grabbou'
+      image: 'http://reactive2015.com/assets/img/team/mike_grabowski.jpg',
+      twitter: 'http://twitter.com/grabbou',
+      github: 'http://github.com/grabbou'
     },
     {
       // 6
@@ -252,10 +252,10 @@ export default {
       bio: 'Mark Dalgleish is the co-creator of CSS Modules, lead organiser of MelbJS and progressive enhancement enthusiast. Mark Dalgleish is a self-described JavaScript addict, co-creator of CSS Modules, lead organiser of MelbJS, and interaction craftsman at SEEK—the most popular job site in Australia. Having got his start with HTML and UI design at a young age, he has since developed a love of open source and software engineering, but always as a means to creating elegant, usable experiences.',
       company: '$ref(companies[7])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/mark_dalgleish.jpg',
-      twitter: 'https://twitter.com/markdalgleish',
-      github: 'https://github.com/markdalgleish',
-      web: 'http://markdalgleish.com/'
+      image: 'http://reactive2015.com/assets/img/team/mark_dalgleish.jpg',
+      twitter: 'http://twitter.com/markdalgleish',
+      github: 'http://github.com/markdalgleish',
+      web: 'https://markdalgleish.com/'
     },
     {
       // 7
@@ -264,9 +264,9 @@ export default {
       bio: 'Sean\'s been convinced there are better ways to develop applications across the stack for years, and built time-traveling debuggers, interface builders, layout tools, and graphic design tools in his quest to explore the space.',
       company: '$ref(companies[8])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/sean_grove.jpg',
-      twitter: 'https://twitter.com/sgrove',
-      github: 'https://github.com/sgrove'
+      image: 'http://reactive2015.com/assets/img/team/sean_grove.jpg',
+      twitter: 'http://twitter.com/sgrove',
+      github: 'http://github.com/sgrove'
     },
     { // 8
       firstName: 'Marcelka',
@@ -274,8 +274,8 @@ export default {
       bio: 'Marcela is a Quantum Physicist turned React developer. Studied at Caltech, returned to Slovakia to be closer to family. In her spare time, she is the MD of the most famous NGO aimed at supporting talented students, Trojsten.sk. One of the founders of VacuumLabs, loves React, thinks functional, is generally very happy.',
       company: '$ref(companies[9])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/marcelka_hrda.jpg',
-      github: 'https://github.com/marcelka'
+      image: 'http://reactive2015.com/assets/img/team/marcelka_hrda.jpg',
+      github: 'http://github.com/marcelka'
     },
     { // 9
       firstName: 'Christian',
@@ -283,10 +283,10 @@ export default {
       bio: 'Christian Alfoni likes to share ideas and build tools to make web development more fun than painful',
       company: '$ref(companies[10])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/christian_alfoni.jpg',
-      twitter: 'https://twitter.com/christianalfoni',
-      github: 'https://github.com/christianalfoni',
-      web: 'http://www.christianalfoni.com/'
+      image: 'http://reactive2015.com/assets/img/team/christian_alfoni.jpg',
+      twitter: 'http://twitter.com/christianalfoni',
+      github: 'http://github.com/christianalfoni',
+      web: 'https://www.christianalfoni.com/'
     },
     { // 10
       firstName: 'Francois',
@@ -294,9 +294,9 @@ export default {
       bio: 'Full-stack developer and co-founder of Fadio IT. For the past 10 years, I have been building web and mobile applications.JavaScript lover, creator of rx-react, my main focus is to create robust and elegant architectures and to make react more "reactive"',
       company: '$ref(companies[11])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/francois_de_campredon.jpg',
-      twitter: 'https://twitter.com/Fdecampredon',
-      github: 'https://github.com/fdecampredon/'
+      image: 'http://reactive2015.com/assets/img/team/francois_de_campredon.jpg',
+      twitter: 'http://twitter.com/Fdecampredon',
+      github: 'http://github.com/fdecampredon/'
     },
     { // 11
       firstName: 'Guillermo',
@@ -304,10 +304,10 @@ export default {
       bio: 'Guillermo Rauch is the former CTO and co-founder of LearnBoost and Cloudup, acquired by WordPress.com in 2013. His background and expertise is in the realtime web. He\'s the creator of socket.io, the most popular OSS realtime framework and one of the most popular JavaScript projects on GitHub, with implementations in many different programming languages (currently running the backend of high profile apps like Microsoft Office online). He also created MongooseJS, one of the most popular MongoDB clients. He\'s the author of "Smashing Node.JS" published by Wiley in 2012, best-selling book about Node.JS on Amazon in multiple programming categories.',
       company: '$ref(companies[12])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/guillermo_rauch.jpg',
-      twitter: 'https://twitter.com/rauchg',
-      github: 'https://github.com/rauchg',
-      web: 'http://rauchg.com/'
+      image: 'http://reactive2015.com/assets/img/team/guillermo_rauch.jpg',
+      twitter: 'http://twitter.com/rauchg',
+      github: 'http://github.com/rauchg',
+      web: 'https://rauchg.com/'
     },
     { // 12
       firstName: 'Michel',
@@ -315,10 +315,10 @@ export default {
       bio: 'Michel is a full-stack lead developer at Mendix. A company that drives digital innovation in large enterprises in partnership with companies like HP, Capgemini and Pivotal. Michel strongly believes in pragrammatic programming; YANGI, agile, the-simplest-thing-that-could-possibly-work. As author of Mobservable he tries to bring reactiveness to the world of React in a way that is accessible for any developer.',
       company: '$ref(companies[13])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/michel_weststrate.jpg',
-      twitter: 'https://twitter.com/mweststrate',
-      github: 'https://github.com/mweststrate',
-      web: 'https://medium.com/@mweststrate'
+      image: 'http://reactive2015.com/assets/img/team/michel_weststrate.jpg',
+      twitter: 'http://twitter.com/mweststrate',
+      github: 'http://github.com/mweststrate',
+      web: 'http://medium.com/@mweststrate'
     },
     { // 13
       firstName: 'Daniel',
@@ -326,10 +326,10 @@ export default {
       bio: 'Creator of Este, dev stack and starter kit for React/Flux universal web applications. Angel developer, Google Developer Expert, libertarian.',
       company: '$ref(companies[6])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/daniel_steigerwald.jpg',
-      twitter: 'https://twitter.com/steida',
-      github: 'https://github.com/steida',
-      web: 'http://daniel.steigerwald.cz/'
+      image: 'http://reactive2015.com/assets/img/team/daniel_steigerwald.jpg',
+      twitter: 'http://twitter.com/steida',
+      github: 'http://github.com/steida',
+      web: 'https://daniel.steigerwald.cz/'
     },
     { // 14
       firstName: 'Richard',
@@ -337,9 +337,9 @@ export default {
       bio: 'Richard is the creator of seamless-immutable and Dreamwriter, and coauthor of Developing a React Edge. Richard leads the front-end team at NoRedInk, where he introduced React, then Flux, and now Elm to their production stack.',
       company: '$ref(companies[14])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/richard_feldman.jpg',
-      twitter: 'https://twitter.com/rtfeldman',
-      github: 'https://github.com/rtfeldman'
+      image: 'http://reactive2015.com/assets/img/team/richard_feldman.jpg',
+      twitter: 'http://twitter.com/rtfeldman',
+      github: 'http://github.com/rtfeldman'
     },
     { // 15
       firstName: 'Joshua',
@@ -347,10 +347,10 @@ export default {
       bio: 'Joshua is Co-creator of the React Native Playground and Rails/DevOps guy. Plays flamenco guitar in Sevilla, Spain, while working on a React Native development platform.',
       company: '$ref(companies[15])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/joshua_sierles.jpg',
-      twitter: 'https://twitter.com/jsierles',
-      github: 'https://github.com/jsierles',
-      web: 'https://rnplay.org/'
+      image: 'http://reactive2015.com/assets/img/team/joshua_sierles.jpg',
+      twitter: 'http://twitter.com/jsierles',
+      github: 'http://github.com/jsierles',
+      web: 'http://rnplay.org/'
     },
     { // 16
       firstName: 'Paul',
@@ -358,9 +358,9 @@ export default {
       bio: 'Paul Taylor is a consultant in San Francisco, CA, and former lead engineer on FalcorJS on Netflix’s UI Platform team. Paul specializes in functional programming and contributes to Reactive Extensions. When he’s not busy meeting client deadlines, he works on installations and procedurally generated visualizations for his partner’s techno performances, and plans to move to Berlin in the next few years.',
       company: '$ref(companies[16])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/paul_taylor.jpg',
-      twitter: 'https://twitter.com/trxcllnt',
-      github: 'https://github.com/trxcllnt'
+      image: 'http://reactive2015.com/assets/img/team/paul_taylor.jpg',
+      twitter: 'http://twitter.com/trxcllnt',
+      github: 'http://github.com/trxcllnt'
     },
     { // 17
       firstName: 'Tomas',
@@ -368,9 +368,9 @@ export default {
       bio: 'Tomas is a former university assistant professor at the Faculty of Informatics, Comenius University, Bratislava. Helped dozens of students with their thesis. Extensive interdisciplinary research in artifical inteligence, biology and physics. He found his passion as the founder and CTO of VacuumLabs.',
       company: '$ref(companies[17])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/tomas_kulich.jpg',
-      twitter: 'https://twitter.com/tomas_kulich',
-      github: 'https://github.com/tomaskulich'
+      image: 'http://reactive2015.com/assets/img/team/tomas_kulich.jpg',
+      twitter: 'http://twitter.com/tomas_kulich',
+      github: 'http://github.com/tomaskulich'
     },
     { // 18
       firstName: 'Andreas',
@@ -378,10 +378,10 @@ export default {
       bio: 'Andreas is a full-stack, product-driven Software Engineer who enjoys building interactive single page applications with rich data visualisations. He is currently engineering things at Twitter and enjoys working on and contributing to open source projects such as d3act for using d3 with React and Radium for better inline style management in React apps. In his spare time, Andreas helps female graduates to learn to code as a Mentor/Lead Instructor for Code First: Girls.',
       company: '$ref(companies[18])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/andreas_savvides.jpg',
-      twitter: 'https://twitter.com/andrs',
-      github: 'https://github.com/AnSavvides',
-      web: 'http://ansavvides.github.io/',
+      image: 'http://reactive2015.com/assets/img/team/andreas_savvides.jpg',
+      twitter: 'http://twitter.com/andrs',
+      github: 'http://github.com/AnSavvides',
+      web: 'https://ansavvides.github.io/',
     },
     { // 19
       firstName: 'Brent',
@@ -389,9 +389,9 @@ export default {
       bio: 'Lives in Vancouver and work primarily with Exponent and Iodine on React Native and BrentQL projects. With the rest of my time, I am a core contributor to React Native itself, I send out the React Native Newsletter each week and I try to go for long runs whenever I can.',
       company: '$ref(companies[19])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/brent_vatne.jpg',
-      twitter: 'https://twitter.com/notbrent',
-      github: 'https://github.com/brentvatne'
+      image: 'http://reactive2015.com/assets/img/team/brent_vatne.jpg',
+      twitter: 'http://twitter.com/notbrent',
+      github: 'http://github.com/brentvatne'
     },
     { // 20
       firstName: 'James',
@@ -399,10 +399,10 @@ export default {
       bio: 'James Long works for Mozilla on the Firefox Developer Tools, mostly trying to make debugging JavaScript better. He\'s spent the last 8 years studying programming languages like Lisp and Scheme, and trying to bring various ideas to JavaScript. He likes to write in-depth articles about interesting programming ideas. Most of his free time is now happily dedicated to his daughter.',
       company: '$ref(companies[0])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/james_long.jpg',
-      twitter: 'https://twitter.com/jlongster',
-      github: 'https://github.com/jlongster',
-      web: 'http://jlongster.com/'
+      image: 'http://reactive2015.com/assets/img/team/james_long.jpg',
+      twitter: 'http://twitter.com/jlongster',
+      github: 'http://github.com/jlongster',
+      web: 'https://jlongster.com/'
     },
     { // 21
       firstName: 'Martin',
@@ -410,9 +410,9 @@ export default {
       bio: 'Works on React Native, specifically the Android part, at Facebook London. I am very excited to see what we\'ll build together now that React Native is open source on iOS and Android.',
       company: '$ref(companies[20])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/martin_konicek.jpg',
-      twitter: 'https://twitter.com/martinkonicek',
-      github: 'https://github.com/mkonicek'
+      image: 'http://reactive2015.com/assets/img/team/martin_konicek.jpg',
+      twitter: 'http://twitter.com/martinkonicek',
+      github: 'http://github.com/mkonicek'
     },
     { // 22
       firstName: 'Colin',
@@ -420,9 +420,9 @@ export default {
       bio: 'Colin is founder of Seattle based startup pol.is as well as a Senior Front End Developer at Formidable Labs. He has architected and built client side applications for some of the largest brands in the world. A former educator, he also teaches regularly at multiple Fortune 10 companies and in the JavaScript community, most recently in a series of in depth talks on ReactJS given at Facebook Seattle. Colin\'s primary focus is user interface design, product design and information architecture. He has a passion for leveraging data visualization technologies and the mobile web to create novel and enduring information experiences. He lives in the Fremont neighborhood of Seattle with his wife Christie and two wonderful little boys.',
       company: '$ref(companies[21])',
       companyRole: 'Founder',
-      image: 'https://reactive2015.com/assets/img/team/colin_megill.jpg',
-      twitter: 'https://twitter.com/colinmegill',
-      github: 'https://github.com/colinmegill'
+      image: 'http://reactive2015.com/assets/img/team/colin_megill.jpg',
+      twitter: 'http://twitter.com/colinmegill',
+      github: 'http://github.com/colinmegill'
     },
     { // 23
       firstName: 'Daniel',
@@ -430,9 +430,9 @@ export default {
       bio: 'Daniel works at github',
       company: '$ref(companies[35])',
       companyRole: 'UX Engineer',
-      image: 'https://reactive2015.com/assets/img/team/daniel_hengeveld.jpg',
-      twitter: 'https://twitter.com/thedaniel',
-      github: 'https://github.com/thedaniel'
+      image: 'http://reactive2015.com/assets/img/team/daniel_hengeveld.jpg',
+      twitter: 'http://twitter.com/thedaniel',
+      github: 'http://github.com/thedaniel'
     },
     { // 24 - dummy
       firstName: '',
