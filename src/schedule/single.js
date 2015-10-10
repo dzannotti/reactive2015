@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     width: 105
   },
   talk: {
-    fontSize: 13
+    fontSize: 13,
+    flex: 1
   },
   sized: {
     height: 70
@@ -49,10 +50,21 @@ const styles = StyleSheet.create({
     borderTopColor: colors.grey
   },
   rightColumn: {
-    paddingLeft: 10,
-    paddingTop: 15,
+    paddingTop: 10,
+    paddingRight: 15,
+    paddingLeft: 3,
     flex: 1,
-    flexDirection: 'column'
+    height: 60,
+    flexDirection: 'column',
+    justifyContent: 'center'
+  },
+  rightColumnExcerpt: {
+    paddingTop: 10,
+    paddingRight: 15,
+    paddingLeft: 3,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   avatar: {
     marginLeft: 20,
@@ -97,9 +109,18 @@ const styles = StyleSheet.create({
 });
 
 export default class Info extends React.Component {
-  time(val) {
-    return Math.floor(val/100) + ':00';
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  time(val) {
+    let minutes = (val - Math.floor(val / 100) * 100) + '';
+    if (minutes.length === 1) {
+      minutes = minutes + '0';
+    }
+    return Math.floor(val / 100) + ':' + minutes;
+  }
+
   type(val) {
     const types = [
       'dataflow',
@@ -115,6 +136,7 @@ export default class Info extends React.Component {
 
   renderHeader() {
     const { event } = this.props;
+    const hasExcerpt = typeof event.excerpt !== 'undefined' && event.excerpt !== '';
     const borderColor = event.type ? styles[this.type(event.type)] : {};
     return (
       <View style={styles.headerContainer}>
@@ -124,10 +146,10 @@ export default class Info extends React.Component {
           </Text>
           <Text style={styles.speaker}>R. Tirumalareddy</Text>
         </View>
-        <View style={[styles.rightColumn, styles.sized, styles.borderTop, borderColor]}>
-          <Text style={styles.talk}>{event.title}</Text>
+        <View style={[styles.rightColumn, styles.borderTop, borderColor]}>
+          <Text style={styles.talk}>{this.capitalize(event.title.toLowerCase())}</Text>
         </View>
-        { this.props.excerpt !== '' &&
+        { hasExcerpt &&
           <View style={[styles.borderTop, styles.sized, styles.center, styles.chevronContainer, borderColor]}>
             <Icon name="ion|ios-arrow-down" size={20} color={colors.grey} style={styles.chevron}/>
           </View>
@@ -143,7 +165,7 @@ export default class Info extends React.Component {
         <View style={styles.leftColumn}>
           <Image style={styles.avatar} source={{uri: 'https://reactive2015.com/assets/img/team/daniel_steigerwald.jpg'}} />
         </View>
-        <View style={styles.rightColumn}>
+        <View style={styles.rightColumnExcerpt}>
           <Text style={styles.talkExcerpt}>{event.excerpt}</Text>
         </View>
       </View>
