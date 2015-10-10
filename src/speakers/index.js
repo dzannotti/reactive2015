@@ -1,6 +1,5 @@
 import React from 'react-native';
 import Relay from 'react-relay';
-import reactMixin from 'react-mixin';
 import Speaker from './speaker';
 
 const {

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0
   }
-})
+});
 
 export default class OverlayImage extends React.Component {
   render() {

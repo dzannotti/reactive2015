@@ -19,7 +19,7 @@ class Schedule extends React.Component {
   prepareSchedule() {
     // todo: cleanup this part
     // too much harcoding
-    const compare = (a,b)  => (a.startAt > b.startAt) ? 1 : ((b.startAt > a.startAt) ? -1 : 0);
+    const compare = (aItm, bItm) => aItm.startsAt - bItm.startsAt;
     const days = [[], [], []];
     this.props.viewer.allEvents.edges.forEach(({ node }) => days[node.day].push(node));
     days[0].sort(compare);

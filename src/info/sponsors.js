@@ -43,14 +43,14 @@ export default class Sponsors extends React.Component {
     this.props.sponsors.forEach(({node}) => {
       if (node.level === 10) {
         sponsors.gold.push(node);
-      } else if(node.level === 20) {
+      } else if (node.level === 20) {
         sponsors.silver.push(node);
-      } else if(node.level === 30) {
+      } else if (node.level === 30) {
         sponsors.bronze.push(node);
       } else {
         sponsors.media.push(node);
       }
-    })
+    });
     return sponsors;
   }
   render() {
