@@ -7,6 +7,7 @@
       "mutationType": {
         "name": "ReindexMutationRoot"
       },
+      "subscriptionType": null,
       "types": [
         {
           "kind": "OBJECT",
@@ -15,7 +16,7 @@
           "fields": [
             {
               "name": "getUser",
-              "description": "Get a `User` object by ID.",
+              "description": "Get an object of type `User` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -42,7 +43,7 @@
             },
             {
               "name": "node",
-              "description": "Get any Node by ID.",
+              "description": "All Reindex types that implement interface `Node` have an `id` that is\nglobally unique among all types. By using this fact, it's possible to retrieve\nany type by this id. `node` root field does exactly that - returns any object\n that has `Node` interface.\n\n* [Relay docs: Object Identification\n](https://facebook.github.io/relay/docs/graphql-object-identification.html#content)\n\nNote that `Node` only has one field - `id`. If you want to retrieve fields of\nconcrete type, you need to use typed fragment.\n\n```graphql\nquery NodeExample {\n  node(id: \"some-id\") {\n    id,\n    ... on Todo {\n      text,\n      completed,\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "id",
@@ -69,7 +70,7 @@
             },
             {
               "name": "getReindexType",
-              "description": "Get a `ReindexType` object by ID.",
+              "description": "Get an object of type `ReindexType` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -96,7 +97,7 @@
             },
             {
               "name": "getEvent",
-              "description": "Get a `Event` object by ID.",
+              "description": "Get an object of type `Event` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -123,7 +124,7 @@
             },
             {
               "name": "getSponsor",
-              "description": "Get a `Sponsor` object by ID.",
+              "description": "Get an object of type `Sponsor` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -150,7 +151,7 @@
             },
             {
               "name": "getCompany",
-              "description": "Get a `Company` object by ID.",
+              "description": "Get an object of type `Company` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -177,7 +178,7 @@
             },
             {
               "name": "getSpeaker",
-              "description": "Get a `Speaker` object by ID.",
+              "description": "Get an object of type `Speaker` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -203,8 +204,35 @@
               "deprecationReason": null
             },
             {
+              "name": "getReindexHook",
+              "description": "Get an object of type `ReindexHook` by ID.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "id of ReindexHook",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHook",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "viewer",
-              "description": "Returns the global node with fields used to query all the objects by type as well as the currently signed in user in the `user` field.",
+              "description": "Returns the global node with fields used to query all the objects by type as\nwell as the currently signed in user in the `user` field.\n\n* [Reindex docs: Viewer\n](https://www.reindex.io/docs/graphql-api/queries/#viewer)\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -216,7 +244,7 @@
             },
             {
               "name": "getReindexAuthenticationProvider",
-              "description": "Get a `ReindexAuthenticationProvider` object by ID.",
+              "description": "Get an object of type `ReindexAuthenticationProvider` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -243,7 +271,7 @@
             },
             {
               "name": "getReindexPermission",
-              "description": "Get a `ReindexPermission` object by ID.",
+              "description": "Get an object of type `ReindexPermission` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -270,7 +298,7 @@
             },
             {
               "name": "getReindexSecret",
-              "description": "Get a `ReindexSecret` object by ID.",
+              "description": "Get an object of type `ReindexSecret` by ID.",
               "args": [
                 {
                   "name": "id",
@@ -467,12 +495,17 @@
             },
             {
               "kind": "OBJECT",
+              "name": "ReindexHook",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
               "name": "Event",
               "ofType": null
             },
             {
               "kind": "OBJECT",
-              "name": "Company",
+              "name": "Speaker",
               "ofType": null
             },
             {
@@ -487,7 +520,7 @@
             },
             {
               "kind": "OBJECT",
-              "name": "Speaker",
+              "name": "Company",
               "ofType": null
             },
             {
@@ -500,7 +533,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexType",
-          "description": "\nA custom type defined in the app. Normally created by\ncreating a migration with the CLI tool.\n\nSee: [Reindex tutorial: Defining the schema\n](https://www.reindex.io/docs/tutorial/defining-the-schema/)\n",
+          "description": "A custom type defined in the app. Normally created by\ncreating a migration with the CLI tool.\n\n* [Reindex docs: Reindex Schema\n](https://www.reindex.io/docs/reindex-schema/)\n* [Reindex docs: Reindex CLI\n](https:///www.reindex.io/docs/reindex-cli/)\n* [Reindex tutorial: Defining the schema\n](https://www.reindex.io/docs/tutorial/defining-the-schema/)\n* [Reindex docs: migrate\n](https://www.reindex.io/docs/graphql-api/mutations/#migrate)\n",
           "fields": [
             {
               "name": "id",
@@ -546,6 +579,18 @@
                   "name": "String",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "description",
+              "description": "Description of the type.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -601,6 +646,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "hooks",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookConnection",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -839,7 +896,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexOrdering",
-          "description": "A sort ordering, consist of a name of a field and an order (ascending/descending).",
+          "description": "A sort ordering, consist of a name of a field and an order\n(ascending/descending).\n",
           "fields": [
             {
               "name": "order",
@@ -901,11 +958,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexPermissionConnection",
-          "description": null,
+          "description": "This is a generated Connection for ReindexPermission.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -949,7 +1006,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -982,7 +1039,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexPermission",
-          "description": "A create/read/update/delete permission to a specific type. Can be granted to a specific `user`, or as a wildcard permission to all users by setting user to `null`.",
+          "description": "A create/read/update/delete permission to a specific type.\nCan be granted to a specific `user`, or as a wildcard permission to\nall users by setting user to `null`.\n\n* [Reindex docs: Authorization\n](https://www.reindex.io/docs/security/authorization/)\n",
           "fields": [
             {
               "name": "id",
@@ -1087,11 +1144,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexPermissionEdge",
-          "description": null,
+          "description": "This is a generated Edge for ReindexPermission.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -1107,7 +1164,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -1178,8 +1235,240 @@
         },
         {
           "kind": "OBJECT",
+          "name": "ReindexHookConnection",
+          "description": "This is a generated Connection for ReindexHook.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
+          "fields": [
+            {
+              "name": "count",
+              "description": "The total number of elements in the connection.\n",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "nodes",
+              "description": "A plain list of ReindexHook objects without the ReindexHookEdge wrapper object.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ReindexHook",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "edges",
+              "description": "A list of edges included in the connection.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ReindexHookEdge",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pageInfo",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexHook",
+          "description": "A hook that is triggered after some event happening to some type. Performs a\nPOST request to a specified URL.\n\n* [Reindex docs: Integrating third-party services\n](https://www.reindex.io/docs/integrations/)\n",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "type",
+              "description": "Type, from operation on which hook triggers. If null, hook will trigger to any\ntype operation.\n",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "trigger",
+              "description": "Event that triggers the hook",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ReindexTriggerType",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "url",
+              "description": "The full URL to send the request to.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "fragment",
+              "description": "Fragment body on the corresponding type payload. Must be surrounded by {} and\nnot have a name. Can include typed inline fragments.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Node",
+              "ofType": null
+            }
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ReindexTriggerType",
+          "description": "Type of the hook trigger.\n\nPossible values:\n\n* `afterCreate` - after object is created\n* `afterUpdate` - after object is updated or replaced\n* `afterDelete` - after object is deleted\n",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "afterCreate",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "afterUpdate",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "afterDelete",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexHookEdge",
+          "description": "This is a generated Edge for ReindexHook.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
+          "fields": [
+            {
+              "name": "cursor",
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Cursor",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "node",
+              "description": "The ${type.name} object wrapped by this edge.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHook",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "ReindexSecret",
-          "description": "Stores a secret used for signing authentication tokens for an app.",
+          "description": "Stores a secret used for signing authentication tokens for an app.\n\n* [Reindex docs: Authentication\n](https://www.reindex.io/docs/security/authentication/)\n",
           "fields": [
             {
               "name": "id",
@@ -1224,7 +1513,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProvider",
-          "description": "An authentication provider includes the settings for an\nauthentication method used for signup and login.\n\nCurrently supported providers are:\n* Facebook (provider type `facebook`)\n* Google (provider type `google`)\n* Twitter (provider type `twitter`)\n* GitHub (provider type `github`)\n\nSee also:\n[Reindex tutorial: Authentication\n](https://www.reindex.io/docs/tutorial/authentication/)\n",
+          "description": "An authentication provider includes the settings for an\nauthentication method used for signup and login.\n\nCurrently supported providers are:\n* Facebook (provider type `facebook`)\n* Google (provider type `google`)\n* Twitter (provider type `twitter`)\n* GitHub (provider type `github`)\n\n\n* [Reindex docs: Authentication\n](https://www.reindex.io/docs/security/authentication/)\n* [Reindex tutorial: Authentication\n](https://www.reindex.io/docs/tutorial/authentication/)\n",
           "fields": [
             {
               "name": "id",
@@ -1916,7 +2205,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexOrderingInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexOrdering`.",
           "fields": null,
           "inputFields": [
             {
@@ -1951,11 +2240,11 @@
         {
           "kind": "OBJECT",
           "name": "_SpeakerConnection",
-          "description": null,
+          "description": "This is a generated Connection for Speaker.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1999,7 +2288,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2022,11 +2311,11 @@
         {
           "kind": "OBJECT",
           "name": "_SpeakerEdge",
-          "description": null,
+          "description": "This is a generated Edge for Speaker.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2042,7 +2331,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -2061,11 +2350,11 @@
         {
           "kind": "OBJECT",
           "name": "_SponsorConnection",
-          "description": null,
+          "description": "This is a generated Connection for Sponsor.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2109,7 +2398,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2197,11 +2486,11 @@
         {
           "kind": "OBJECT",
           "name": "_SponsorEdge",
-          "description": null,
+          "description": "This is a generated Edge for Sponsor.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2217,7 +2506,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -2236,11 +2525,11 @@
         {
           "kind": "OBJECT",
           "name": "_EventConnection",
-          "description": null,
+          "description": "This is a generated Connection for Event.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2284,7 +2573,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2307,11 +2596,11 @@
         {
           "kind": "OBJECT",
           "name": "_EventEdge",
-          "description": null,
+          "description": "This is a generated Edge for Event.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2327,7 +2616,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -2346,7 +2635,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexViewer",
-          "description": "The global node with fields used to query all the objects by type as well as the currently signed in user in the `user` field.",
+          "description": "Global `Node` used to query all objects and current user.\n\n`ReindexViewer` has a `user` field, which is currently logged-in user.\nIf there is no logged-in user, this field will return `null`.\n\nFor each type, `ReindexViewer` holds a field with a Connection to all objects\nof that type. Its name is `allObjects`, where `Objects` is a pluralized name\nof the type.\n",
           "fields": [
             {
               "name": "allReindexSecrets",
@@ -2595,6 +2884,69 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "ReindexAuthenticationProviderConnection",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "allReindexHooks",
+              "description": "A connection with all objects of type `ReindexHook`",
+              "args": [
+                {
+                  "name": "first",
+                  "description": "Number of edges to include from the beginning of the result.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "10"
+                },
+                {
+                  "name": "last",
+                  "description": "Number of edges to include from the end of the result.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Only return edges before given cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Cursor",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "after",
+                  "description": "Only return edges after given cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Cursor",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "The ordering to sort the results by.",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ReindexOrderingInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookConnection",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2970,11 +3322,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexSecretConnection",
-          "description": null,
+          "description": "This is a generated Connection for ReindexSecret.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3018,7 +3370,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3041,11 +3393,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexSecretEdge",
-          "description": null,
+          "description": "This is a generated Edge for ReindexSecret.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3061,7 +3413,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3080,11 +3432,11 @@
         {
           "kind": "OBJECT",
           "name": "_UserConnection",
-          "description": null,
+          "description": "This is a generated Connection for User.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3128,7 +3480,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3151,11 +3503,11 @@
         {
           "kind": "OBJECT",
           "name": "_UserEdge",
-          "description": null,
+          "description": "This is a generated Edge for User.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3171,7 +3523,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3190,11 +3542,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProviderConnection",
-          "description": null,
+          "description": "This is a generated Connection for ReindexAuthenticationProvider.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3238,7 +3590,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3261,11 +3613,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProviderEdge",
-          "description": null,
+          "description": "This is a generated Edge for ReindexAuthenticationProvider.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3281,7 +3633,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3300,11 +3652,11 @@
         {
           "kind": "OBJECT",
           "name": "_CompanyConnection",
-          "description": null,
+          "description": "This is a generated Connection for Company.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3348,7 +3700,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3371,11 +3723,11 @@
         {
           "kind": "OBJECT",
           "name": "_CompanyEdge",
-          "description": null,
+          "description": "This is a generated Edge for Company.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3391,7 +3743,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3410,11 +3762,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexTypeConnection",
-          "description": null,
+          "description": "This is a generated Connection for ReindexType.\n\nConnection is a pattern from Relay.\nIt's a specification, designed to make management of ordered collections easier,\nwhen pagination and ordering is required. Reindex uses Connections for linking\n`Node` types and for providing an interface to retrieving all objects of some\ntype.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "count",
-              "description": "The total number of nodes included in the connection.",
+              "description": "The total number of elements in the connection.\n",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3458,7 +3810,7 @@
             },
             {
               "name": "pageInfo",
-              "description": "Information used by the client for paginating the connection.",
+              "description": "Information about if there are any more elements before or after the current\nslice.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3481,11 +3833,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexTypeEdge",
-          "description": null,
+          "description": "This is a generated Edge for ReindexType.\n\nEdges are elements of `edges` list of Connections.\n\n* [Reindex docs: Connection\n](https://reindex)\n* [Relay docs: Connections\n](https://facebook.github.io/relay/docs/graphql-connections.html#content)\n",
           "fields": [
             {
               "name": "cursor",
-              "description": null,
+              "description": "The opaque string-like object, that points to the current node. To be used with\n`before` and `after` arguments of the Connection field.\n",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3501,7 +3853,7 @@
             },
             {
               "name": "node",
-              "description": null,
+              "description": "The ${type.name} object wrapped by this edge.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3872,9 +4224,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateCompanyInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateCompanyInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3895,9 +4251,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3918,9 +4278,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateSpeakerInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateSpeakerInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3941,9 +4305,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexSecretInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexSecretInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3964,9 +4332,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3981,15 +4353,19 @@
             },
             {
               "name": "replaceEvent",
-              "description": "Replaces the given `Event` object.",
+              "description": "Replaces the given `Event` object with a new one.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceEventInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceEventInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4003,16 +4379,47 @@
               "deprecationReason": null
             },
             {
-              "name": "replaceSponsor",
-              "description": "Replaces the given `Sponsor` object.",
+              "name": "createReindexHook",
+              "description": "Creates a new `ReindexHook` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceSponsorInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexHookInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "replaceSponsor",
+              "description": "Replaces the given `Sponsor` object with a new one.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceSponsorInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4033,9 +4440,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4050,15 +4461,19 @@
             },
             {
               "name": "replaceCompany",
-              "description": "Replaces the given `Company` object.",
+              "description": "Replaces the given `Company` object with a new one.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceCompanyInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceCompanyInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4073,7 +4488,7 @@
             },
             {
               "name": "migrate",
-              "description": "Migrates the schema of the app.",
+              "description": "Performs a migration.\n\nThis mutation is used by `reindex-cli` to perform `schema-push`.\n\n* [Reindex docs: Reindex schema\n](https://www.reindex.io/docs/reindex-schema/)\n* [Reindex docs: Reindex CLI\n](https://www.reindex.io/docs/reindex-cli/)\n",
               "args": [
                 {
                   "name": "input",
@@ -4100,15 +4515,19 @@
             },
             {
               "name": "replaceSpeaker",
-              "description": "Replaces the given `Speaker` object.",
+              "description": "Replaces the given `Speaker` object with a new one.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceSpeakerInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceSpeakerInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4129,9 +4548,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4145,6 +4568,33 @@
               "deprecationReason": null
             },
             {
+              "name": "replaceReindexHook",
+              "description": "Replaces the given `ReindexHook` object with a new one.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceReindexHookInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "deleteSponsor",
               "description": "Deletes the given `Sponsor` object",
               "args": [
@@ -4152,9 +4602,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteSponsorInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteSponsorInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4175,9 +4629,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteEventInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteEventInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4198,9 +4656,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateSponsorInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateSponsorInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4221,9 +4683,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateEventInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateEventInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4244,9 +4710,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4267,9 +4737,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteCompanyInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteCompanyInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4290,9 +4764,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexSecretInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexSecretInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4313,9 +4791,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4336,9 +4818,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateCompanyInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateCompanyInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4353,15 +4839,19 @@
             },
             {
               "name": "replaceReindexAuthenticationProvider",
-              "description": "Replaces the given `ReindexAuthenticationProvider` object.",
+              "description": "Replaces the given `ReindexAuthenticationProvider` object with a new one.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4382,9 +4872,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteSpeakerInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteSpeakerInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4405,9 +4899,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4428,9 +4926,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateSpeakerInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateSpeakerInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4444,16 +4946,74 @@
               "deprecationReason": null
             },
             {
-              "name": "replaceReindexPermission",
-              "description": "Replaces the given `ReindexPermission` object.",
+              "name": "deleteReindexHook",
+              "description": "Deletes the given `ReindexHook` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexHookInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "updateReindexHook",
+              "description": "Updates the given `ReindexHook` object. The given fields are merged to the existing object.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateReindexHookInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "replaceReindexPermission",
+              "description": "Replaces the given `ReindexPermission` object with a new one.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4474,9 +5034,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4497,9 +5061,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateSponsorInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateSponsorInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4520,9 +5088,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateEventInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateEventInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4537,15 +5109,19 @@
             },
             {
               "name": "replaceUser",
-              "description": "Replaces the given `User` object.",
+              "description": "Replaces the given `User` object with a new one.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4566,9 +5142,13 @@
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -4653,7 +5233,7 @@
         {
           "kind": "OBJECT",
           "name": "_CompanyPayload",
-          "description": "The payload returned from mutations of `Company`.",
+          "description": "The payload returned from mutations of `Company`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -4693,7 +5273,7 @@
             },
             {
               "name": "changedCompany",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4705,7 +5285,7 @@
             },
             {
               "name": "changedCompanyEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4759,7 +5339,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexPermissionPayload",
-          "description": "The payload returned from mutations of `ReindexPermission`.",
+          "description": "The payload returned from mutations of `ReindexPermission`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -4823,7 +5403,7 @@
             },
             {
               "name": "changedReindexPermission",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4835,7 +5415,7 @@
             },
             {
               "name": "changedReindexPermissionEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4989,7 +5569,7 @@
         {
           "kind": "OBJECT",
           "name": "_SpeakerPayload",
-          "description": "The payload returned from mutations of `Speaker`.",
+          "description": "The payload returned from mutations of `Speaker`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -5029,7 +5609,7 @@
             },
             {
               "name": "changedSpeaker",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5041,7 +5621,7 @@
             },
             {
               "name": "changedSpeakerEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5095,7 +5675,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexSecretPayload",
-          "description": "The payload returned from mutations of `ReindexSecret`.",
+          "description": "The payload returned from mutations of `ReindexSecret`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -5135,7 +5715,7 @@
             },
             {
               "name": "changedReindexSecret",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5147,7 +5727,7 @@
             },
             {
               "name": "changedReindexSecretEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5390,7 +5970,7 @@
         {
           "kind": "OBJECT",
           "name": "_EventPayload",
-          "description": "The payload returned from mutations of `Event`.",
+          "description": "The payload returned from mutations of `Event`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -5430,7 +6010,7 @@
             },
             {
               "name": "changedEvent",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5442,11 +6022,167 @@
             },
             {
               "name": "changedEventEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
                 "name": "_EventEdge",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_CreateReindexHookInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "trigger",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ReindexTriggerType",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "url",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fragment",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexHookPayload",
+          "description": "The payload returned from mutations of `ReindexHook`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the mutated object.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "viewer",
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a ReindexHook object, you can add it\nto `viewer.allReindexHooks` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allReindexHooks',\n  edgeName: 'changedReindexHookEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexViewer",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "type",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "changedReindexHook",
+              "description": "The mutated object.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHook",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "changedReindexHookEdge",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexHookEdge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -5524,7 +6260,7 @@
         {
           "kind": "OBJECT",
           "name": "_SponsorPayload",
-          "description": "The payload returned from mutations of `Sponsor`.",
+          "description": "The payload returned from mutations of `Sponsor`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -5564,7 +6300,7 @@
             },
             {
               "name": "changedSponsor",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5576,7 +6312,7 @@
             },
             {
               "name": "changedSponsorEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5626,7 +6362,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexCredentialCollectionInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexCredentialCollection`.",
           "fields": null,
           "inputFields": [
             {
@@ -5677,7 +6413,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexFacebookCredentialInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexFacebookCredential`.",
           "fields": null,
           "inputFields": [
             {
@@ -5718,7 +6454,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexGithubCredentialInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexGithubCredential`.",
           "fields": null,
           "inputFields": [
             {
@@ -5779,7 +6515,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexGoogleCredentialInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexGoogleCredential`.",
           "fields": null,
           "inputFields": [
             {
@@ -5820,7 +6556,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexTwitterCredentialInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexTwitterCredential`.",
           "fields": null,
           "inputFields": [
             {
@@ -5881,7 +6617,7 @@
         {
           "kind": "OBJECT",
           "name": "_UserPayload",
-          "description": "The payload returned from mutations of `User`.",
+          "description": "The payload returned from mutations of `User`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -5921,7 +6657,7 @@
             },
             {
               "name": "changedUser",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -5933,7 +6669,7 @@
             },
             {
               "name": "changedUserEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -6048,7 +6784,7 @@
             },
             {
               "name": "force",
-              "description": "Must be `true` to run the migration, if it includes destructive commands.",
+              "description": "Must be `true` to run the migration, if it includes destructive commands.\n",
               "type": {
                 "kind": "SCALAR",
                 "name": "Boolean",
@@ -6058,7 +6794,7 @@
             },
             {
               "name": "dryRun",
-              "description": "If `true`, we only validate the schema and return the migration commands without running them.",
+              "description": "If `true`, we only validate the schema and return the migration commands\nwithout running them.\n",
               "type": {
                 "kind": "SCALAR",
                 "name": "Boolean",
@@ -6099,6 +6835,16 @@
             },
             {
               "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -6153,7 +6899,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexFieldInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexField`.",
           "fields": null,
           "inputFields": [
             {
@@ -6272,7 +7018,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexPermissionSetInput",
-          "description": "The input object for mutations of type `${type.name}`.",
+          "description": "The input object for mutations of type `ReindexPermissionSet`.",
           "fields": null,
           "inputFields": [
             {
@@ -6631,7 +7377,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProviderPayload",
-          "description": "The payload returned from mutations of `ReindexAuthenticationProvider`.",
+          "description": "The payload returned from mutations of `ReindexAuthenticationProvider`.\n\n* [Reindex docs: Mutations\n](https://www.reindex.io/docs/graphql-api/mutations/)\n",
           "fields": [
             {
               "name": "clientMutationId",
@@ -6671,7 +7417,7 @@
             },
             {
               "name": "changedReindexAuthenticationProvider",
-              "description": "The the mutated object.",
+              "description": "The mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -6683,7 +7429,7 @@
             },
             {
               "name": "changedReindexAuthenticationProviderEdge",
-              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly\ncreated object to a connection in Relay.\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -6696,6 +7442,93 @@
           ],
           "inputFields": null,
           "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_ReplaceReindexHookInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "trigger",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ReindexTriggerType",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "url",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fragment",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the replaced object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
@@ -7448,6 +8281,116 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "_DeleteReindexHookInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the deleted object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_UpdateReindexHookInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "trigger",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "ReindexTriggerType",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "url",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fragment",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the updated object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "_ReplaceReindexPermissionInput",
           "description": null,
           "fields": null,
@@ -7863,7 +8806,7 @@
         {
           "kind": "OBJECT",
           "name": "__Schema",
-          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query and mutation operations.",
+          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
           "fields": [
             {
               "name": "types",
@@ -7907,6 +8850,18 @@
             {
               "name": "mutationType",
               "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "subscriptionType",
+              "description": "If this server support subscription, the type that subscription operations will be rooted at.",
               "args": [],
               "type": {
                 "kind": "OBJECT",

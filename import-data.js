@@ -7,7 +7,7 @@ reindex.setToken(process.env.REINDEX_TOKEN);
 function createMutation(name) {
   const lowerName = name.toLowerCase();
   return `
-    mutation Import${name}(\$${lowerName}: _Create${name}Input) {
+    mutation Import${name}(\$${lowerName}: _Create${name}Input!) {
       create${name}(input: \$${lowerName}) {
         id
       }
